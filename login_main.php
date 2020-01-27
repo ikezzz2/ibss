@@ -35,11 +35,13 @@ if (isset($_POST["login"])) {
             $stmt -> execute(array($_POST["userid"]));// SQLを実行
             $row = $stmt -> fetch(PDO::FETCH_ASSOC);
 
-            //print_r($_POST);
-            if ($row["password"]!= NULL && password_verify ($_POST['password'] , $row['password'])){
+            print_r($row);
+            if ($row["password"]!= NULL){
+	     if (password_verify ($_POST['password'] , $row['password'])){
                     $_SESSION['login'] = 1;
                     header("Location: toppage.php");  // TOP画面へ遷移
                     exit();  // 処理終了
+		}
             } else {
                     // 認証失敗
                     $errorMessage = 'ユーザーIDあるいはパスワードに誤りがあります。';
