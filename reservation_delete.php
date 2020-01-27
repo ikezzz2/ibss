@@ -62,7 +62,7 @@
 			echo "<input type = 'hidden' name = delid[".$akey."] value = ".$akey.">";
 	}
 	?>
-	<input class="btn" type="submit" value="削除" >
+	<input id="btnR" class="btn" type="submit" value="削除" >
 <?php }?>
 </form>
 </div>

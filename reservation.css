@@ -22,6 +22,10 @@
   border-bottom: none;/*線を消す*/
 }
 
+#btnR{
+  margin-left: 300%;
+}
+
 /*定義リストの設定*/
 /*定義語欄の設定*/
 form dl dt{
@@ -29,7 +33,7 @@ form dl dt{
   padding:5px 0;
   float:left;
   clear:both;
-  font-size: 30px;
+  font-size: 40px;
 }
 /*定義説明欄の設定*/
 form dl dd{
@@ -40,7 +44,7 @@ form dl dd{
 /*表の設定*/
 /*基本設定*/
 table{
-  width: 85%;
+  width: 100%;
   border-collapse: collapse;
 }
 /*見出しの設定*/
@@ -74,8 +78,7 @@ p.size{
 
 /*全体の設定*/
 body{
-  margin-left: 20%;
-  font-size: 20px;
+  font-size: 40px;
   background-color:#CCCCFF;
 /*  #99CCCC;
      99CCFF

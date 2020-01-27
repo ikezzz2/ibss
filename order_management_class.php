@@ -29,7 +29,7 @@
           $this->order_management_html .= "<tr>";
           $this->order_management_html .= "<td>".$row['productname']."</td>";
           $this->order_management_html .= "<td>".$row['seatnum']."</td>";
-          $this->order_management_html .= "<td><input type = \"checkbox\" name = \"product[]\" value = \"".$row['orderid']."\"></td>";
+          $this->order_management_html .= "<td><input class='chekbox' type = \"checkbox\" name = \"product[]\" value = \"".$row['orderid']."\"></td>";
           $this->order_management_html .= "</tr>";
         }
       }

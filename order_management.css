@@ -13,6 +13,7 @@ h2{
   border-collapse: collapse; /* セル同士の枠線を重ねる */
   overflow: auto; /* 画面をはみ出す場合はスクロールバーを表示 */
   white-space: nowrap; /* テーブル内の文字を改行しない */
+  background-color: #FFF;
 }
 
 /* スクロールバー */
