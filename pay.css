@@ -1,14 +1,17 @@
+
+/*ボタンの基本設定*/
 .btn{
-  margin-right: 10%;
-  margin-top: 10%;
+  margin-right: 10%;/*要素間の間隔*/
+  margin-top: 10%;/*要素間の間隔*/
   font-size: 45px;
-  display: inline-block;
+  display: inline-block;/*パディングの重複防止*/
   padding: 0.5em 1em;
   text-decoration: none;
   background: #668AD8;/*ボタン色*/
   color: #FFF;
-  border-bottom: solid 4px #627295;
+  border-bottom: solid 4px #627295;/*ボタンの影*/
   border-radius: 3px;
+  /*ボタンサイズ*/
   height: 120px;
   width: 340px;
 }
@@ -20,11 +23,13 @@
   border-bottom: none;/*線を消す*/
 }
 
+/*ボタンを右端に寄せる*/
 #btnR{
   float: right;
   margin-right: 150px;
 }
 
+/*ラジオボタンの設定*/
 .bx{
   margin-left: 30%;
   font-size: 80px;
@@ -32,24 +37,27 @@
   height: 90px;
 }
 
+/*PHP文内にある文字の文字サイズ*/
 .se{
   margin-left: 20%;
   color: #F00;
 }
 
 
-
+/*会計内容について*/
 .line1 {
-    width: 300px;
+    width: 700px;
     padding: 0.5em 1em;
-    margin: 2em 20%;
+    margin: 2em 3px; /*20%;*/
     border: double 5px #4ec4d3;
+    background-color: #FFF;
 }
 .line1 p {
     margin: 0
     padding: 0;
 }
 
+/*全体の基本的な設定*/
 body{
   margin-left: 5%;
   font-size: 80px;

@@ -57,17 +57,17 @@
       <br>上記の内容で登録しますか？
 
 	<br>
-	<input type="submit" value="戻る"  formaction="reservation_seat.php" >
+	<input class="btn" type="submit" value="戻る"  formaction="reservation_seat.php" >
 	<?php
 		if($_POST["reservation_info"]["return"] == 0){
 	?>
 		<input type= "hidden" name = update ?>
-		<input type="submit" value="確定"  formaction="today_reservation_check.php">
+		<input id="btnR" class="btn" type="submit" value="確定"  formaction="today_reservation_check.php">
 		<?php
 	}else{
 		?>
-			<input type= "hidden" name = update  ?>
-			<input type="submit" value="確定"  formaction="day_input_reservation_check.php">
+			<input class="btn" type= "hidden" name = update  ?>
+			<input id="btnR" class="btn" type="submit" value="確定"  formaction="day_input_reservation_check.php">
 		<?php
 		}
 	}
