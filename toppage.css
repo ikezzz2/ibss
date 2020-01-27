@@ -9,11 +9,11 @@ input, button, textarea, select {
   display: inline-block;
   width: 170px;
   height: 170px;
-  font-size: 35px;
+  font-size: 26px;
   line-height: 50px;
   color: #000;
   background: #FFB6C1;
-
+padding: 0;
   }
   .btn2 {
     border-radius: 10px;
@@ -21,10 +21,11 @@ input, button, textarea, select {
     display: inline-block;
     width: 170px;
     height: 170px;
-    font-size: 35px;
+    font-size: 26px;
     line-height: 50px;
     color: #000;
     background: #A7F1FF;
+    padding: 0;
 
     }
     .btn3 {
@@ -33,10 +34,11 @@ input, button, textarea, select {
       display: inline-block;
       width: 170px;
       height: 170px;
-      font-size: 35px;
+      font-size: 26px;
       line-height: 50px;
       color: #000;
       background: #AEFFBD;
+      padding: 0;
 
       }
       .btn4 {
@@ -45,10 +47,11 @@ input, button, textarea, select {
         display: inline-block;
         width: 230px;
         height: 170px;
-        font-size: 35px;
+        font-size: 26px;
         line-height: 50px;
         color: #000;
         background: #E9FFA5;
+        padding: 0;
 
         }
         .btn5 {
@@ -57,10 +60,11 @@ input, button, textarea, select {
           display: inline-block;
           width: 230px;
           height: 170px;
-          font-size: 35px;
+          font-size: 26px;
           line-height: 50px;
           color: #000;
           background: #CCCCCC;
+          padding: 0;
 
           }
           .btn6 {
@@ -70,11 +74,12 @@ input, button, textarea, select {
             display: inline-block;
             width: 185px;
             height: 50px;
-            font-size: 35px;
+            font-size: 26px;
             line-height: 50px;
             color: #000;
             background: #FFB6C1;
-            
+            padding: 0; 
+
             }
 
 
