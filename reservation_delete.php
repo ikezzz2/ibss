@@ -15,6 +15,7 @@
 <html>
 <head>
 	<title>座席使用状況</title>
+	<link rel = "stylesheet" type = "text/css" href = "reservation.css">
   <meta http-equiv="Content-Type" content="text/html; charset=utf8">
 	  <meta http-equiv="Content-Script-Type" content="text/javascript">
 		<style media="screen">
@@ -49,7 +50,7 @@
 上記の予約を削除します
 	<br>
 	<div style="display:inline-flex">
-	<input type="submit" value="戻る"  formaction="reservation_edit.php">
+	<input class="btn" type="submit" value="戻る"  formaction="reservation_edit.php">
 </form>
 <form action='reservation_edit.php' name='seat_check' method='post' id = seatsub>
 
@@ -61,7 +62,7 @@
 			echo "<input type = 'hidden' name = delid[".$akey."] value = ".$akey.">";
 	}
 	?>
-	<input type="submit" value="削除" >
+	<input class="btn" type="submit" value="削除" >
 <?php }?>
 </form>
 </div>

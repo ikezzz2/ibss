@@ -21,7 +21,10 @@ h2{
 }
 
 .table_order_management::-webkit-scrollbar-track{
-  background: #f1f1f1; /* スクロールバーの背景色 */
+  background: #f1f1f1;
+  /*
+  DDFFFF
+  f1f1f1; スクロールバーの背景色 */
 }
 
 .table_order_management::-webkit-scrollbar-thumb{
@@ -52,20 +55,20 @@ h2{
 
 /* マウスオーバー時の行の設定 */
 .table_order_management tr:hover{
-  background: #a3ffa3; /* 背景カラー */
+  background: #DDFFFF; /* 背景カラー *//*a3ffa3*/
 }
 
 .btn{
-  margin-left: 10px;
+  margin-top: 20px;
   position: relative;
-  max-width: 400px;
   background-color: #668AD8;
-  font-size: 25px;
+  font-size: 35px;
   color: #FFF;
   text-decoration: none!important;
   padding: 1em 3em;
   border-bottom: solid 5px #627295;
   border-radius: 4px;
+  width: 400px;
 }
 
 .btn:active {
@@ -75,14 +78,16 @@ h2{
 }
 
 .chekbox{
-  transform:scale(3);/*チェックボックスのサイズ*/
+  transform:scale(5);/*チェックボックスのサイズ*/
 }
 
 body{
   margin-left: 5%;
   font-size: 60px;
-  background-color:#E0FFFF;
+  background-color:#aeffbb;
   /*
+  93ffab
+  E0FFFF
   AEFFBD
   CBFFD3
   CCFF99

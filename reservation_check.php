@@ -14,6 +14,7 @@
 <html>
 <head>
 	<title>座席使用状況</title>
+	<link rel = "stylesheet" type = "text/css" href = "reservation.css">
   <meta http-equiv="Content-Type" content="text/html; charset=utf8">
 	  <meta http-equiv="Content-Script-Type" content="text/javascript">
 </head>

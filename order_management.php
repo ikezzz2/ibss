@@ -1,8 +1,8 @@
 <?php
   // ログインしているかを確認
-  include "login_class.php";
-  $login = new login_class();
-  $login->ses_start();
+  //include "login_class.php";
+  //$login = new login_class();
+  //$login->ses_start();
 
   // 注文管理を行うための準備
   include "order_management_class.php"; // 注文管理をするための処理を記述したクラスファイル
@@ -28,7 +28,6 @@
           $kbn = htmlspecialchars($_POST["button_update"], ENT_QUOTES, "utf-8");
           switch($kbn){
             case "update":
-              // 商品の配膳フラグを更新する
               $order_management->order_management_update($_POST["product"]);
               break;
 
@@ -44,15 +43,17 @@
 
       <!-- ボタンの設定 -->
       <br>
-      <!-- TOPへボタン(top画面へ遷移する) -->
+      <!-- TOPへ戻るボタン(top画面へ遷移する) -->
 			<button class="btn" type = "button" name = "button_return" value = "return" onclick = "location.href='toppage.php'">
-				TOPへ
+				TOPへ戻る
 			</button>
 
 			<!-- 更新ボタン(配膳フラグの更新する) -->
 			<button class="btn" type = "submit" name = "button_update" value = "update">
 				更新
 			</button>
+
+      <br>
 
 			<!-- リセットボタン(チェックを全てはずす) -->
 			<button class="btn" type = "reset" name = "button_reset" value = "reset">

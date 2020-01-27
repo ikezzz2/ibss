@@ -40,7 +40,7 @@
 <html>
 <head>
 	<title>座席使用状況</title>
-	<link rel = "stylesheet" type = "text/css" href = "CSS/reservation.css">
+	<link rel = "stylesheet" type = "text/css" href = "reservation.css">
   <meta http-equiv="Content-Type" content="text/html; charset=utf8">
   <style media="screen">
         .float_test{
@@ -75,6 +75,7 @@
   <div class = "float_test">
 
   <form action=''  method='post' id = "all">
+		<p class="size">
     <?php
     /*  echo "	<form action=''  method='post' id = ".substr($key["starthour"],11,5)."".$key['name'].">";
       echo "    ";
@@ -96,7 +97,7 @@
     foreach ($row as $key){
       print_r("<input type= 'hidden' name = reservation_info[return] value = ".$_POST["reservation_info"]["return"] .">");
       print_r("<input type= 'hidden' name = reservation_info[date_info] value = ".$_POST["reservation_info"]["date_info"] .">");
-      echo "<input type = 'text' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".$key['name']." form = 'all'>";
+      echo "<input class='bx' type = 'text' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".$key['name']." form = 'all'>";
       echo substr($key["starthour"],10,6)."〜";
       echo substr($key["finhour"],10,6);
       echo "</form>";
@@ -107,6 +108,7 @@
 			echo "予約がありません。";
 				if($_POST["reservation_info"]["return"] == 0){
 			?>
+		</p>
 				<input type= "hidden" name = reservation_info[date_info] value = <?php echo "'".$_POST["reservation_info"]["date_info"]."'" ?>>
 			  <input type="submit" value = "戻る" formaction = "today_reservation_check.php"  form = "all">
 				<?php
@@ -140,6 +142,7 @@
       print_r("<input type= 'hidden' name = reservation_info[".$key2."] value = ".$key[$key2] .">");
       }
       */
+			echo "<br>";
       print_r("<input class='btn' type= 'submit' value = '編集'>");
       echo "</form>";
     }
@@ -163,7 +166,7 @@
     foreach ($row as $key){
     $arraykey= array_keys($key);
 
-      echo "<input type = 'checkbox' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".substr($key["starthour"],11,8)."".$key['seatnum']." onclick = 'check()'  >";
+      echo "<input class='chekbox' type = 'checkbox' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".substr($key["starthour"],11,8)."".$key['seatnum']." onclick = 'check()'  >";
       echo "<br>";
     }
     echo "<br>";
@@ -194,7 +197,7 @@
 	?>
 
 
-<input type='submit' value='確認' form = "all">
+<input class="btn" type='submit' value='確認' form = "all">
 </div>
 	<br>
 </form>

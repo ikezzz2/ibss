@@ -1,7 +1,9 @@
+/*注文表全体*/
 .tab-wrap {
     display: flex;
     flex-wrap: wrap;
 }
+/*商品ジャンル部分のボタン*/
 .tab-label {
     color: White;
     background: LightGray;
@@ -9,6 +11,7 @@
     padding: 3px 12px;
     order: -1;
 }
+/*商品一覧部分*/
 .tab-content {
     margin-top: 50px;
     width: 100%;
@@ -27,15 +30,17 @@
     font-size: 40px;
 }
 
+/*スクロールバーの設定*/
 div.scroll {
-    width: 600px;
-    height: 200px;
+    width: 1200px;
+    height: 500px;
     overflow: scroll;
 }
 
+/*ボタンの設定*/
 .btn{
   margin-top: 10%;
-  font-size: 25px;
+  font-size: 40px;
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -43,8 +48,8 @@ div.scroll {
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
-  height: 60px;
-  width: 200px;
+  height: 150px;
+  width: 290px;
 }
 
 .btn:active {
@@ -54,20 +59,28 @@ div.scroll {
   border-bottom: none;/*線を消す*/
 }
 
-.bx{
+#btnR{
   margin-left: 20%;
+}
+
+/*ラジオボタンの設定1(座席番号)*/
+.bx{
+  margin-left: 20%;/*要素間の感覚*/
   font-size: 80px;
   width: 160px;
   height: 90px;
 }
 
+/*ラジオボタンの設定2(注文の個数)*/
 .bx1{
   width: 130px;
-  font-size: 60px;
+  font-size: 80px;
   margin-left: 50px;
 }
 
+/*全体の設定*/
 body{
+  margin-left: 50px;
   font-size: 80px;
   background-color:#FFE4C4;
   /*

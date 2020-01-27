@@ -17,7 +17,7 @@
 <html>
 <head>
 	<title>予約座席選択</title>
-	<link rel = "stylesheet" type = "text/css" href = "CSS/reservation.css">
+	<link rel = "stylesheet" type = "text/css" href = "reservation.css">
   <meta http-equiv="Content-Type" content="text/html; charset=utf8">
 	  <meta http-equiv="Content-Script-Type" content="text/javascript">
 		<script type="text/javascript">
@@ -81,8 +81,8 @@
 	} ?>
 	<br>
 	<br>
-	<input type="submit" value="戻る"  formaction="reservation_input.php" >
-	<input type="submit" value="次へ"   id = seatsub disabled="disabled">
+	<input class="btn" type="submit" value="戻る"  formaction="reservation_input.php" >
+	<input class="btn" type="submit" value="次へ"   id = seatsub disabled="disabled">
 	<? } ?>
 </body>
 </html>
