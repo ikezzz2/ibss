@@ -176,7 +176,7 @@ if(isset($_POST["resid"])){
 	<?php
 	}
 	?>
-	<input class="btn" type="submit" value="次へ" id = "sub" required >
+	<input id="btnR" class="btn" type="submit" value="次へ" id = "sub" required >
 </form>
 <?php }?>
 </body>

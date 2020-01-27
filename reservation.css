@@ -23,13 +23,13 @@
 }
 
 #btnR{
-  margin-left: 300%;
+  margin-left: 50%;
 }
 
 /*定義リストの設定*/
 /*定義語欄の設定*/
 form dl dt{
-  width: 250px;
+  width: 350px;
   padding:5px 0;
   float:left;
   clear:both;

@@ -166,6 +166,7 @@
     foreach ($row as $key){
     $arraykey= array_keys($key);
 
+		echo "<br>";
       echo "<input class='chekbox' type = 'checkbox' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".substr($key["starthour"],11,8)."".$key['seatnum']." onclick = 'check()'  >";
       echo "<br>";
     }
