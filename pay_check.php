@@ -1,4 +1,8 @@
 <?php
+    include('login_class.php');
+    $login = new login_class();
+    $login->ses_start();
+    
     include('seat_class2.php');
     $seat = new seat_class();
 
@@ -44,6 +48,10 @@
         $row=$seat->sum_pay($_GET["A"]);
                 print("合計金額 ￥");
                 echo $row[0][0];
+
+        $time=$seat->get_info($_GET["A"]);
+        
+        $seat->del_management($_GET["A"], $time);
     ?>
     </span>
     <div>

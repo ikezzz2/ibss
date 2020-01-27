@@ -51,10 +51,10 @@ class seat_class{
     }
 
     public function del_management($seat_num, $time){
-        print_r($time);
+        //print_r($time);
         $pdo = new PDO($this->dnsinfo, $this ->db_user, $this->db_pw);
         $sql = "DELETE FROM ordermanagement WHERE seatnum=? AND date='".date('Y-m-d')."' AND starthour=?";
-        print_r($sql);
+        //print_r($sql);
         $stml = $pdo->prepare($sql);
         $stml -> execute(array($seat_num, $time["starthour"]));
     }
