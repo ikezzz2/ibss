@@ -30,7 +30,7 @@ if (isset($_POST["login"])) {
         // 3. エラー処理
         try {
             $pdo = new PDO($dsn, 'root', ''); //デーブルに接続
-            $sql = "select  password from userinfo where id = ? COLLATE Japanese_CS_AS_KS_WS"; // SQL文を作成
+            $sql = "select  password from userinfo where BINARY id = ?"; // SQL文を作成
             $stmt = $pdo -> prepare($sql);//SQLを実行するための準備
             $stmt -> execute(array($_POST["userid"]));// SQLを実行
             $row = $stmt -> fetch(PDO::FETCH_ASSOC);
