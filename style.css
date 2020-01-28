@@ -1,0 +1,123 @@
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 700px;
+  margin: 0 auto;}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid #ffb6c1;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 25px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+
+/*#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}*/
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #ffb6c1;
+  color: #000;
+}
+
+
+
+
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]{
+  width: 220px;
+  height: 30px;
+  font-size: 16px;
+}
+
+input[type="int"]{
+  width: 220px;
+  height: 30px;
+  font-size: 16px;
+}
+
+.btn {
+  display: inline-block;
+  margin-left: 30px;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668AD8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  width: 100px;
+  height: 50px;
+  }
+.btn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+
+table{
+  width: 85%;
+  border-collapse: collapse;
+}
+table tr{
+  text-align: center;
+  background-color: #FFFFFF;
+  font-size: 80px;
+}
+table th{
+  font-size:50px;
+  background-color: #000080;
+  color: #FFFFFF;
+}
+body{
+  background-color:#FFF;
+  max-width: 40em;
+  position: relative;
+  right: -30%;
+  top: 20em;
+  transform: scale(1.5);
+}
