@@ -16,7 +16,7 @@ class order_input_class{
 
     public function get_seat_number(){
         $pdo = new PDO($this->dnsinfo, $this ->db_user, $this->db_pw);
-        $sql = "select distinct seatnum from ordermanagement where starthour <= ".date('Y-m-d-h-i-s')." order by seatnum ASC";
+        $sql = "select distinct seatnum from ordermanagement where starthour <= '".date('Y-m-d-h-i-s')."' order by seatnum ASC";
         $stml = $pdo->prepare($sql);
         $stml -> execute(null);
         $row = $stml->fetchAll();
