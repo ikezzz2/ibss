@@ -5,13 +5,14 @@ input, button, textarea, select {
 }
 .btn {
   display: inline-block;
+  text-align: center;
   padding: 0.5em 1em;
   text-decoration: none;
   background: #668AD8;/*ボタン色*/
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
-  font-size: 22px;
+  font-size: 25px;
   width: 120px;
   height: 80px;
   padding: 0px;
