@@ -9,6 +9,8 @@
     if(isset($_POST["end"])){
         $time=$seat->get_info($_POST["seat_num"]);
 
+        $row =$seat->del_order($_POST["seat_num"]);
+
         $seat->del_management($_POST["seat_num"], $time);
         header("Location: toppage.php");
     }
