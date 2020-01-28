@@ -55,10 +55,10 @@
         
                 echo "<input type='hidden' name='seat_num' value=".$_GET["A"].">";
 
-        $time=$seat->get_info($_GET["A"]);
-        print_r($time);
+        // $time=$seat->get_info($_GET["A"]);
+        // print_r($time);
         
-        // $seat->del_management($_GET["A"], $time);
+        // // $seat->del_management($_GET["A"], $time);
     ?>
     </span>
     <div>
