@@ -5,9 +5,18 @@ class order_input_class{
     private $db_pw = "";
 
     
+    // public function get_seat_number(){
+    //     $pdo = new PDO($this->dnsinfo, $this ->db_user, $this->db_pw);
+    //     $sql = "select seatnum from seatinfo order by seatnum ASC";
+    //     $stml = $pdo->prepare($sql);
+    //     $stml -> execute(null);
+    //     $row = $stml->fetchAll();
+    //     return $row;
+    // }
+
     public function get_seat_number(){
         $pdo = new PDO($this->dnsinfo, $this ->db_user, $this->db_pw);
-        $sql = "select seatnum from seatinfo order by seatnum ASC";
+        $sql = "select distinct seatnum from ordermanagement where starthout <= ".date('Y-m-d')." order by seatnum ASC";
         $stml = $pdo->prepare($sql);
         $stml -> execute(null);
         $row = $stml->fetchAll();
