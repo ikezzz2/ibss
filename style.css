@@ -61,11 +61,11 @@ input[name="tab_item"] {
 
 
 
-/*input, button, textarea, select {
+button, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}*/
+}
 
 input[type="text"]{
   width: 220px;
