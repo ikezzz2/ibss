@@ -68,10 +68,10 @@ if (isset($_POST["login"])) {
           <legend style="padding-right: 160px;">ログインフォーム</legend>
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
                 <p style="padding-right: 160px;">
-                <label for="userid">ユーザーID</label><input type="text" class="form" id="userid" name="userid" placeholder="ユーザーIDを入力" value="<?php if (!empty($_POST["userid"])) {echo htmlspecialchars($_POST["userid"], ENT_QUOTES);} ?>">
+                <label for="userid">ユーザーID</label><input type="text" id="userid" name="userid" placeholder="ユーザーIDを入力" value="<?php if (!empty($_POST["userid"])) {echo htmlspecialchars($_POST["userid"], ENT_QUOTES);} ?>">
               </p>
                 <p style="padding-right: 160px;">
-                <label for="password">パスワード</label><input type="password" class="form" id="password" name="password" value="" placeholder="パスワードを入力">
+                <label for="password">パスワード</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
               </p>
                 <p style="padding-right: 160px;">
                 <input type="submit" class="btn" id="login" name="login" value="ログイン">
