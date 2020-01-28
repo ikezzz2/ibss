@@ -82,14 +82,14 @@ function draw_reservation(){
     var finish_minute = <?php echo $finish_minute ?>;
     var rect_finish = finish_hour - start_hour;
     var rect_hour = start_hour   ;
-    
+
         context3.fillStyle="silver";
     context3.fillRect(200*( 1 + rect_hour + (start_minute / 60)) - 150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  ((finish_minute-start_minute) / 60)) - 5,50);
     context3.fillStyle="black";
     context3.strokeRect(200*( 1 + rect_hour + (start_minute / 60))-150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  ((finish_minute-start_minute) / 60)) - 5,50);
     context3.font = "30px serif";
     context3.fillText(<?php echo "'".$reservation["name"]."'"; ?>, 200*( 1 + rect_hour + (start_minute / 60)) + 10-150 , 40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
-   
+
     <?php }
   }
 
@@ -152,10 +152,11 @@ if (canvas.getContext) {
 </head>
 <body>
 	<center>
+		<h1 style="padding-right: 200px;">
   <?php
 	echo date("Y-m-d");
 	?>
-
+</h2>
   <div id="sample">
 <br>
   <h1 style="padding-right: 120px;">座席時間割<h1><br>
