@@ -81,7 +81,7 @@ function draw_reservation(){
     hours = new Date().getHours() ;
     var rect_hour = start_hour - hours   ;
     var rect_finish = finish_hour - start_hour;
-    context3.fillStyle="aqua";
+    context3.fillStyle="silver";
     context3.fillRect(200*( 2 + rect_hour + (start_minute / 60)) - 150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,50);
     context3.fillStyle="black";
     context3.strokeRect(200*( 2 + rect_hour + (start_minute / 60))-150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,50);
