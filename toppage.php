@@ -4,7 +4,7 @@
       $login->ses_start();
 
       $login ->delete_yesterday();
-      
+      $login ->delete();
 
 
       if(isset($_POST["log_out"])){
