@@ -43,7 +43,7 @@ window.addEventListener("load", function(){
       draw_seat_num(<?php echo $i ?>);
     <?php
     }
-    ?>
+    ?>    
     draw_reservation();
 }, false);
 
@@ -81,13 +81,12 @@ function draw_reservation(){
     hours = new Date().getHours() ;
     var rect_hour = start_hour - hours   ;
     var rect_finish = finish_hour - start_hour;
-		//context3.strokeStyle=a71fff;
-		//context3.strokeStyle="blue";  //線の色を青に指定
-  	//context3.fillStyle="red";     //塗りつぶしの色を赤に指定
-
-    context3.strokeRect(200*( 2 + rect_hour + (start_minute / 60)),40 + (120*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,70);
+    context3.fillStyle="aqua";
+    context3.fillRect(200*( 2 + rect_hour + (start_minute / 60)) - 150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,50);
+    context3.fillStyle="black"; 
+    context3.strokeRect(200*( 2 + rect_hour + (start_minute / 60))-150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,50);
     context3.font = "30px serif";
-    context3.fillText(<?php echo "'".$reservation["name"]."'"; ?>, 200*( 2 + rect_hour + (start_minute / 60)) + 10, 40 + (120*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
+    context3.fillText(<?php echo "'".$reservation["name"]."'"; ?>, 200*( 2 + rect_hour + (start_minute / 60)) + 10-150 , 40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
     <?php }
   }
 
@@ -101,9 +100,8 @@ function draw_seat_num(seat_number){
     var context2 = canvas2.getContext('2d');
     var seat_of_num = <?php echo $seatnums; ?>;
     context2.font = "30px serif";
-    context2.fillText(<?php echo "'".date('Y/m/d')."'"?>, 10, 30);
     for(var i = 0 ; i < seat_of_num ; i++ ){
-      context2.fillText(seat_number, 120, (90 +((seat_number - 1) * 120)));
+      context2.fillText(seat_number, 10, (70 +((seat_number - 1) * 90)));
     }
   }
 }
@@ -114,20 +112,20 @@ function baseset(number_of_seat) {
 var canvas = document.getElementById('sample1');
 if (canvas.getContext) {
   var context = canvas.getContext('2d');
-  canvas.height = 1200 ;
+  canvas.height = 900 ;
   canvas.width = 1200 ;
   hours = new Date().getHours() ;
   var height = canvas.height ;
   var width = canvas.width ;
-  for(var j = 200;j <= width ; j += 200){
-
+  for(var j = 50;j <= width -100  ; j += 200){
+    jj = j + 150;	
     context.font = "30px serif";
-    settime = hours + ((j / 200) - 2)
+    settime = hours + ((jj / 200) - 2)
     if(settime > 24){
       break;
     }
     context.fillText(settime, j, 30);
-    for(var i = 50 ;i < height ; i += 20){
+    for(var i = 60 ;i < height ; i += 20){
       context.beginPath();
       //パスの開始座標を指定する
       context.moveTo(j,i - 10);
@@ -142,9 +140,9 @@ if (canvas.getContext) {
     settime = hours +  4;
     for(var i = 30;i < height ; i += (height/number_of_seat) ){
       if(hours + (j / 200) - 3 >= 24){
-        context.strokeRect(200,i,200 * (settime - hours -1) ,90);
+        context.strokeRect(50,i,200 * (settime - hours -1) ,60);
       }else{
-        context.strokeRect(200,i,1000,90);
+        context.strokeRect(50,i,1000,60);
       }
     }
   }
@@ -153,6 +151,9 @@ if (canvas.getContext) {
 </script>
 </head>
 <body>
+<?php
+echo date("Y-m-d");
+?>
 	<center>
   <?php $seat->today_reservation_check(1) ?>
   <div id="sample">
