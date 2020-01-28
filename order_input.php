@@ -1,7 +1,7 @@
 <?php
-    // include('login_class.php');
-    // $login = new login_class();
-    // $login->ses_start();
+    include('login_class.php');
+    $login = new login_class();
+    $login->ses_start();
 
     include('order_input_class.php');
     $seat = new order_input_class();
@@ -20,7 +20,7 @@
 
         <form id="select_seat" name="select_seat" action="" method="POST">
             座席番号
-            <select class="bx" style="width: 130px" name="seat_num" required>
+            <select class="bx" style="width: 145px" name="seat_num" required>
             <?php
                 if(isset($_POST["seat_num"])){
                     echo "<option value='' >".$_POST["seat_num"]."</option>";
@@ -62,7 +62,7 @@
                                 $array_count = count($_POST["name"]);
                                 //POSTされたデータの名前と表を生成する際の名前が一緒なら初期値の個数を変更する
                                 if($_POST["name"][$count2]==$num2[0]){
-                                    echo "<input class='bx1' type='number' max='10' min='0' value=".$_POST["sum"][$count2]." name=".$num2[0]."[]>";
+                                    echo "<input class ='bx1' type='number' max='10' min='0' value=".$_POST["sum"][$count2]." name=".$num2[0]."[]>";
                                     echo "<br>";
                                     //POSTされた商品名の数超えていなければカウントプラスする
                                     if($count2 < $array_count -1){
