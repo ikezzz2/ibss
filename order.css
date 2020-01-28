@@ -42,10 +42,10 @@ div.scroll {
 .btn{
   margin: 0.5em 1em;
   position: relative;
-  max-width: 250px;
+  max-width: 300px;
   text-align: center;
   background-color: #668AD8;
-  font-size: 50px;
+  font-size: 40px;
   color: #FFF;
   -webkit-transition: none;
   transition: none;
