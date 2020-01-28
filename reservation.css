@@ -26,7 +26,7 @@
   margin-top: 5px;/*要素間の間隔*/
   margin-left: 50px;
   margin-right: 40px;
-  font-size: 50px;/*文字サイズ*/
+  font-size: 30px;/*文字サイズ*/
   display: inline-block;/*パディングの重複対策*/
   padding: 4px 1em;
   text-decoration: none;
@@ -35,7 +35,7 @@
   border-bottom: solid 4px #627295;/*ボタンの影*/
   border-radius: 3px;
   /*ボタンサイズ*/
-  height: 90px;
+  height: 55px;
   width: 200px;
 }
 
@@ -101,7 +101,7 @@ table td{
 /*チェックボックスの設定*/
 .chekbox{
   margin-bottom: 20px;
-  transform:scale(3);/*チェックボックスのサイズ*/
+  transform:scale(4.5);/*チェックボックスのサイズ*/
 }
 
 /*全体の設定*/
