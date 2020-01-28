@@ -102,7 +102,7 @@
               //echo '<input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required>';
               //echo "<br /><br />";
             }
-            echo $create_table;
+            echo $create_table."</table>";
             echo "</div>";
         ?>
         <input type="submit" class="addcheck" name="addcheck" value="確認" onClick="form.action='menu_check_add.php';return true">
@@ -119,6 +119,7 @@
         /*text-align: center;*/
         color: #000000;
         font-size: 2vw;
+        background:#eeeeee;
     }
     h1{
         text-align: center;
@@ -133,26 +134,34 @@
       height:5%; 
       min-width:250px ;
       min-height:20px ;*/
-      top:9vw; 
-      left:58%;
+      top:9vw; /*
+      left:58%;*/
+      left: 50%;
       width:18%;
       height:5%; 
       min-width:250px ;
-      max-height:50px ;
-      font-size:1.5vw;
+      max-height:50px ;/*
+      font-size:1.5vw;*/
+      font-size: 2.5vw;
       float:left;
     }
     div.menu_mei{
-        position:absolute;
-        font-size:2vw;
+        position:absolute;/*
+        font-size:2vw;*/
+        font-size:3vw;/*
         top: 17vw;
-        left: 28%;
+        left: 28%;*/
+        top: 16.5vw;
+        left: 10%;
     }
     div.menu_kin{
-        position:absolute;
-        font-size:2vw;
+        position:absolute;/*
+        font-size:2vw;*/
+        font-size:3vw;/*
         top: 17vw;
-        left: 58%;
+        left: 58%;*/
+        top: 16.5vw;
+        left: 55%;
         float: left;
     }
     div.cate{
@@ -163,9 +172,12 @@
     div.scroll {
     top: 21vw;
     font-size:2vw;
-    position:absolute;
+    position:absolute;/*
     left: 28%;
     width: 60%;
+    height: 40%;*/
+    left: 10%;
+    width: 80%;
     height: 40%;
     overflow: scroll;
     overflow-x: hidden;
@@ -192,18 +204,21 @@ table.add_value td{
 
 select{
   position:absolute;
-  top: 7vw;
-  left: 28%;
-  width:18%;
+  top: 7vw;/*
+  left: 28%;*/
+  left: 10%;/*
+  width:18%;*/
+  width: 25%;
   height:5%;
   min-width:200px ;
-  max-height:50px ;
-  font-size:1.5vw;
+  max-height:50px ;/*
+  font-size:1.5vw;*/
+  font-size:2.5vw;
 }
 
     
 input[type="submit"]{
-  position:fixed;
+  /*position:fixed;*/
   /*background-color: #0066FF;
   color: #ffffff;*/
   width:10%;
@@ -238,25 +253,29 @@ input[type="submit"]:active {
   position:absolute;
   /*margin:10px 10px 10px 0px;*/
   left:5%;
-  top: 60%;
+  top: 55%;
 }
 .menu_name{
   position:absolute;
-  left: 0%;
-  width:30%;
+  left: 0%;/*
+  width:30%;*/
+  width:45%;
   height:10%;
   min-width:200px ;
-  min-height:30px ;
-  font-size:1.5vw;
-  padding: 
+  min-height:30px ;/*
+  font-size:1.5vw;*/
+  font-size:2.5vw;
+  /*padding: */
 }
 .menu_value{
   position:absolute;
-  left: 50%;
-  width:30%;
+  left: 50%;/*
+  width:30%;*/
+  width:45%;
   height:10%;
   min-width:150px ;
-  min-height:30px ;
-  font-size:1.5vw;
+  min-height:30px ;/*
+  font-size:1.5vw;*/
+  font-size:2.5vw;
   float: left;
 }
