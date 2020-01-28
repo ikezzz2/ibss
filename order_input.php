@@ -20,7 +20,7 @@
 
         <form id="select_seat" name="select_seat" action="" method="POST">
             座席番号
-            <select class="bx" style="width: 145px" name="seat_num" required>
+            <select class="bx" style="width: 180px" name="seat_num" required>
             <?php
                 if(isset($_POST["seat_num"])){
                     echo "<option value='' >".$_POST["seat_num"]."</option>";
