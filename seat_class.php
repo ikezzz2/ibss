@@ -5,7 +5,8 @@ class seat_class{
   private $db_pw = "";
   private $seat_check;
 private function generate_seat_check(){//座席情報確認画面生成
-  //現在時刻に予約情報が入っているか確認し、入っているなら使用中、入っていないなら空席と表示する
+  //現在時刻に予約情報が入っているか確認し、入っているなら使用中、入っていないなら空席と表示すru
+
   $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
   $sql = "select seatnum from seatinfo";//座席数確保
   $stmt = $pdo->prepare($sql);
@@ -13,8 +14,9 @@ private function generate_seat_check(){//座席情報確認画面生成
   $this->seat_check ="<table border=`1` width=`5000` cellspacing=`0` cellpadding=`5` bordercolor=`#333333`>";
   $this->seat_check .= "<tr><th>座席番号</th><th>座席情報</th></tr>";
   while($row = $stmt->fetch(PDO::FETCH_ASSOC)){//座席番号一つずつ取り出し
-    $sql2 ="SELECT count(*)  FROM ordermanagement WHERE seatnum = ?  AND date = ? AND starthour <= ?
+      $sql2 ="SELECT count(*)  FROM ordermanagement WHERE seatnum = ?  AND date = ? AND starthour <= ?
         AND finhour >= ?" ;//現在の予約を座席ごとに取り出してカウント
+  
     $date = date("Y")."-".date("m")."-".date("d");
     $starthour = date("Y")."-".date("m")."-".date("d")." ".date("H").":".date("i").":".date("s");
     $finhour = date("Y")."-".date("m")."-".date("d")." ".date("H").":".date("i").":".date("s");

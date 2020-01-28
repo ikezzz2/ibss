@@ -1,6 +1,8 @@
 <?php
 	include('seat_class.php');
 	$seat = new seat_class();
+print_r(date("Y-m-d"));
+
 ?>
 <!--座席情報確認画面-->
 <!DOCTYPE html>
