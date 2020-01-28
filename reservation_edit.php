@@ -135,6 +135,7 @@
       continue;
     }
 		echo "<br>";
+		echo "<div>";//aaa
     foreach ($row as $key){
 
       echo "  <form action='reservation_input.php'  method='post'  >";
@@ -154,6 +155,7 @@
       echo "</form>";
 
     }
+		echo "</div>";//aaaa
     echo "<br>";
   }
     ?>
@@ -171,6 +173,7 @@
     if($row == NULL){
       continue;
     }
+		echo "<div>";//aaaaa
     foreach ($row as $key){
     $arraykey= array_keys($key);
 
@@ -178,8 +181,9 @@
       echo "<input class='chekbox' type = 'checkbox' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".substr($key["starthour"],11,8)."".$key['seatnum']." onclick = 'check()'  >";
 
     }
+		echo "</div>";//aaaaa
+
     echo "<br>";
-		echo "<br>";
     }
     echo "</div>";
     echo '<div class = "float_none">';
