@@ -14,9 +14,12 @@ input, button, textarea, select {
   height: 50px;
   }
 
-  .from input[type=text] {
-    font-size: 100%;
+  input[type="text"]{
+    width: 220px;
+    height: 30px;
+    font-size: 16px;
   }
+
 
 
 .btn:active {
