@@ -71,23 +71,31 @@ table{
   width: 100%;
   border-collapse: collapse;
 }
-/*見出しの設定*/
+/*全体の設定*/
 table tr{
+  width: auto;
   text-align: center;
   background-color: #FFFFFF;
-  font-size: 80px;
+  font-size: 40px;
+}
+/*目次の設定*/
+table th{
+  width: auto;
+  font-size:40px;
+  background-color: #000080;
+  color: #FFFFFF;
 }
 /*内容の設定*/
 table th{
-  font-size:50px;
-  background-color: #000080;
-  color: #FFFFFF;
+  font-size: 40px;
+  background-color: #FFF;
 }
 
 /*ラジオボタンのプロパティ*/
 .bx{
-  font-size: 30px;
-  height: 50px;
+  font-size: 40px;
+  height: 60px;
+  width: 350px;
 }
 
 /*チェックボックスの設定*/
@@ -99,7 +107,7 @@ table th{
 /*全体の設定*/
 body{
   font-size: 40px;
-  background-color:#CCCCFF;
+  background-color:#F5FFFA;
 /*  #99CCCC;
      99CCFF
 */

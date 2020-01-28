@@ -21,7 +21,7 @@
     <body>
         <form id="select_seat" name="select_seat" action="" method="POST">
         座席番号
-        <select class="bx" style="width: 200px" name="example" required>
+        <select class="bx" style="width:200px" name="example" required>
         <option value="none" ></option>
 
         <?php
@@ -37,7 +37,7 @@
 
         <div>
         <button class="btn" formaction="toppage.php">戻るボタン</button>
-        <button id="btnR"class="btn" type="submit" name="next" formaction="">次へボタン</button>
+        <button class="btn" type="submit" name="next" formaction="">次へボタン</button>
 
 
 

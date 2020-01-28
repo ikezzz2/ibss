@@ -61,7 +61,7 @@
 			$reskey = array_keys($_POST["resid"]);
 				if(substr($reskey[0],8,2) == $key["seatnum"]){
 					echo "<tr><td>".$key["seatnum"]."<td>";
-					echo "<input type='checkbox' name= seatnum[] value='".$key["seatnum"]."' checked = 'checked' onclick='check()' ></tr></td>";
+					echo "<input class='chekbox' type='checkbox' name= seatnum[] value='".$key["seatnum"]."' checked = 'checked' onclick='check()' ></tr></td>";
 				}
 		}
 		$i++;

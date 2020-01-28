@@ -31,10 +31,11 @@
 
 /*ラジオボタンの設定*/
 .bx{
-  margin-left: 30%;
-  font-size: 80px;
+  margin-top: 10%;
+  margin-left: 20%;
+  font-size: 90px;
   width: 200px;
-  height: 150px;
+  height: 200px;
 }
 
 /*PHP文内にある文字の文字サイズ*/
