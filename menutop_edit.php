@@ -81,6 +81,10 @@
 
   </head>
   <body>
+    <br>
+    <br>
+    <br>
+    <br>
       <h1>メニュー編集</h1>
       <br>
     <!--generate_menuedit_inputとwrite_menuedit_inputのメソッド部分-->
