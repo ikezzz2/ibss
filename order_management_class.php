@@ -23,7 +23,7 @@
           $this->order_management_html .= "<tr>";
           $this->order_management_html .= "<td>".$row['productname']."</td>";
           $this->order_management_html .= "<td>".$row['seatnum']."</td>";
-          $this->order_management_html .= "<td><input type = \"checkbox\" name = \"product[]\" value = \"".$row['orderid']."\"></td>";
+          $this->order_management_html .= "<td><input class='chekbox' type = \"checkbox\" name = \"product[]\" value = \"".$row['orderid']."\"></td>";
           $this->order_management_html .= "</tr>";
         }
       }
@@ -52,7 +52,7 @@
     public function order_management_delete($delete_order){
       $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
-      foreach($delete_order as $row){ // 配膳フラグが0のものだけ削除する
+      foreach($delete_order as $row){
         $sql_delete = "delete from orderaccept where orderid = ? and servingflag = 0";
   			$stmt_delete = $pdo -> prepare($sql_delete);
   			$stmt_delete -> execute(Array($row));
