@@ -101,9 +101,8 @@ table td{
 
 /*チェックボックスの設定*/
 .chekbox{
-  margin-top: 20px;
-  margin-bottom: 23px;
-  transform:scale(4);/*チェックボックスのサイズ*/
+  margin-top: 35px;
+  transform:scale(5);/*チェックボックスのサイズ*/
 }
 
 /*全体の設定*/
