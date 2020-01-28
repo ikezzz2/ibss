@@ -1,91 +1,92 @@
 /*注文表全体*/
 .tab-wrap {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 /*商品ジャンル部分のボタン*/
 .tab-label {
-    color: White;
-    background: LightGray;
-    margin-right: 5px;
-    padding: 3px 12px;
-    order: -1;
+  color: White;
+  background: LightGray;
+  margin-right: 5px;
+  padding: 3px 12px;
+  order: -1;
 }
 /*商品一覧部分*/
 .tab-content {
-    margin-top: 50px;
-    width: 100%;
-    display: none;
+  margin-top: 50px;
+  font-size:40px;
+  width: 100%;
+  display: none;
 }
 /* アクティブなタブ */
 .tab-switch:checked+.tab-label {
-    background: DeepSkyBlue;
+  background: DeepSkyBlue;
 }
 .tab-switch:checked+.tab-label+.tab-content {
-    display: block;
+  display: block;
 }
 /* ラジオボタン非表示 */
 .tab-switch {
-    display: none;
-    font-size: 40px;
+  display: none;
+  font-size: 40px;
 }
 
 /*スクロールバーの設定*/
 div.scroll {
-    width: 1200px;
-    height: 500px;
-    overflow: scroll;
+  width: 1200px;
+  height: 500px;
+  overflow: scroll;
 }
 
 /*ボタンの設定*/
 .btn{
-  margin-top: 50px;
-  font-size: 40px;
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668AD8;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
-  height: 180px;
-  width: 300px;
+margin-top: 50px;
+font-size: 40px;
+display: inline-block;
+padding: 0.5em 1em;
+text-decoration: none;
+background: #668AD8;/*ボタン色*/
+color: #FFF;
+border-bottom: solid 4px #627295;
+border-radius: 3px;
+height: 180px;
+width: 300px;
 }
 
 .btn:active {
-  /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+/*ボタンを押したとき*/
+-webkit-transform: translateY(4px);
+transform: translateY(4px);/*下に動く*/
+border-bottom: none;/*線を消す*/
 }
 
 #btnR{
-  margin-left: 40%;
+margin-left: 40%;
 }
 
 /*ラジオボタンの設定1(座席番号)*/
 .bx{
-  margin-left: 20%;/*要素間の感覚*/
-  font-size: 80px;
-  width: 160px;
-  height: 90px;
+margin-left: 20%;/*要素間の感覚*/
+font-size: 80px;
+width: 160px;
+height: 90px;
 }
 
 /*ラジオボタンの設定2(注文の個数)*/
 .bx1{
-  width: 130px;
-  font-size: 80px;
-  margin-left: 200px;
+width: 130px;
+font-size: 40px;
+/*margin-left: 200px;*/
 }
 
 /*全体の設定*/
 body{
-  margin-left: 50px;
-  font-size: 80px;
-  background-color:#FFE4C4;
-  /*
-  FFDEAD
-  FFCCFF
-  FFCCCC;
-  F5FFFA;*/
+margin-left: 50px;
+font-size: 80px;
+background-color:#FFE4C4;
+/*
+FFDEAD
+FFCCFF
+FFCCCC;
+F5FFFA;*/
 }
