@@ -41,7 +41,7 @@
  	echo "<tr><th>名前</th><th>日付</th><th>開始時間</th><th>終了時間</th></tr>";
 		foreach ($key as $akey) {
         $row = $seat->delete_check($akey);
-				echo "<tr><td>" .$row[0][2]. "</td><td>".substr($row[0][5],0,10)."</td><td>".substr($row[0][5],11,8)."</td><td>".substr($row[0][6],11,8)."</td></tr>";
+				echo "<tr><td>" .htmlentities($row[0][2]). "</td><td>".substr($row[0][5],0,10)."</td><td>".substr($row[0][5],11,8)."</td><td>".substr($row[0][6],11,8)."</td></tr>";
 		//		echo "<input type = 'checkbox' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".substr($key["starthour"],11,8)."".$key['seatnum']." onclick = 'check()'  >";
 
 		}

@@ -98,7 +98,7 @@
 
       print_r("<input type= 'hidden' name = reservation_info[return] value = ".$_POST["reservation_info"]["return"] .">");
       print_r("<input type= 'hidden' name = reservation_info[date_info] value = ".$_POST["reservation_info"]["date_info"] .">");
-      echo "<input class='bx' type = 'text' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".$key['name']." form = 'all'>";
+      echo "<input class='bx' type = 'text' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".htmlentities($key['name'])." form = 'all'>";
 			echo substr($key["starthour"],10,6)."〜";
       echo substr($key["finhour"],10,6);
 			echo "<br>";

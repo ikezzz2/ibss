@@ -98,7 +98,7 @@
 		<dd><input class="bx" type = "text" name = reservation_info[name]
 		<?php
 		if(isset($_POST["resid"])){
-			echo "value = ".$row[0]["name"];
+			echo "value = ".htmlentities($row[0]["name"]);
 		}
 		?>
 		 required><dd><br>
