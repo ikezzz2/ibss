@@ -1,8 +1,6 @@
 <?php
 	include('seat_class.php');
 	$seat = new seat_class();
-print_r(date("Y-m-d"));
-
 ?>
 <!--座席情報確認画面-->
 <!DOCTYPE html>
@@ -15,6 +13,8 @@ print_r(date("Y-m-d"));
 </head>
 <body>
 	<form action='today_reservation_check.php' name='seat_check' method='post'>
+		<br>
+		<br>
 	<input type="submit" class="btn" value="戻る"  formaction="toppage.php">
 
 	<?php
