@@ -1,13 +1,15 @@
 <?php
-    include('seat_class2.php');
-    $seat = new seat_class();
-
     include('login_class.php');
     $login = new login_class();
     $login->ses_start();
+    
+    include('seat_class2.php');
+    $seat = new seat_class();
 
     if(isset($_POST["end"])){
-        $row =$seat->del_order($_GET["A"]);
+        $time=$seat->get_info($_POST["seat_num"]);
+
+        $seat->del_management($_POST["seat_num"], $time);
         header("Location: toppage.php");
     }
 
@@ -49,9 +51,11 @@
                 print("合計金額 ￥");
                 echo $row[0][0];
         
-        $time=$seat->get_info($_GET["A"]);
+                echo "<input type='hidden' name='seat_num' value=".$_GET["A"].">";
+
+        // $time=$seat->get_info($_GET["A"]);
         
-        $seat->del_management($_GET["A"], $time);
+        // $seat->del_management($_GET["A"], $time);
     ?>
     </span>
     <div>
