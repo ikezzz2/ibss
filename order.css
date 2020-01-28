@@ -40,17 +40,19 @@ div.scroll {
 
 /*ボタンの設定*/
 .btn{
-margin-top: 50px;
-font-size: 38px;
-display: inline-block;
-padding: 0.5em 1em;
-text-decoration: none;
-background: #668AD8;/*ボタン色*/
-color: #FFF;
-border-bottom: solid 4px #627295;
-border-radius: 3px;
-height: 180px;
-width: 280px;
+  margin: 0.5em 1em;
+  position: relative;
+  max-width: 250px;
+  text-align: center;
+  background-color: #668AD8;
+  font-size: 50px;
+  color: #FFF;
+  -webkit-transition: none;
+  transition: none;
+  text-decoration: none!important;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 #627295;
 }
 
 .btn:active {
