@@ -163,7 +163,7 @@
 
   </div>
 
-  <div class = "float_test">
+  <div class = "float_test" id="check">
     <?php
 		echo "  <form action='reservation_delete.php'  method='post' id = 'del'  name = 'seat'>";
 		print_r("<input type= 'hidden' name = reservation_info[return] value = ".$_POST["reservation_info"]["return"] .">");
@@ -185,7 +185,7 @@
 		echo "<br>";
 		echo "</div>";//aaaaa
 
-    echo "<br>";
+    //echo "<br>";
     }
     echo "</div>";
     echo '<div class = "float_none">';
