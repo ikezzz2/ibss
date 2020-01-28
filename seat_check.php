@@ -11,7 +11,7 @@
 	  <meta http-equiv="Content-Script-Type" content="text/javascript">
 		<link rel="stylesheet" href="seat_check.css">
 </head>
-<body>
+<body -webkit-text-size-adjust: 100%;>
 	<form action='today_reservation_check.php' name='seat_check' method='post'>
 		<br>
 		<br>
