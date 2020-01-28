@@ -62,7 +62,7 @@
     <br>
     <br>
     <br>
-    <h1>メニュー編集へログイン</h1>
+    <h1 style="padding-left: 10px;">メニュー編集へログイン</h1>
     <!--generate_login_inputとwrite_login_inputのメソッド部分-->
     <form method="post" action="login_owner.php"> <?php //action="check_login_owner.php" ?>
       <p style="padding-right: 10px;">
@@ -71,7 +71,9 @@
       <br>
       <br>
       <br>
+      <p style="padding-right: 1px;">
       <input type="submit" class="btn" id="btn" name="btn" value="ログイン">
+    </p>
     </form>
 
     <form name='top'>
