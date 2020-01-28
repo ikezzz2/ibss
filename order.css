@@ -40,7 +40,7 @@ div.scroll {
 
 /*ボタンの設定*/
 .btn{
-  margin: 0.5em 1em;
+  margin-top: 0.5em;
   position: relative;
   max-width: 300px;
   text-align: center;
