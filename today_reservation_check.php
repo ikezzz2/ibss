@@ -150,7 +150,7 @@ if (canvas.getContext) {
 //-->
 </script>
 </head>
-<body>
+<body -webkit-text-size-adjust: 100%;>
 	<br>
 	<br>
 	<h1>
