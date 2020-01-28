@@ -86,7 +86,7 @@ table th{
   color: #FFFFFF;
 }
 /*内容の設定*/
-table th{
+table td{
   font-size: 40px;
   background-color: #FFF;
 }
@@ -107,7 +107,7 @@ table th{
 /*全体の設定*/
 body{
   font-size: 40px;
-  background-color:#F5FFFA;
+  background-color:#66FFFF;
 /*  #99CCCC;
      99CCFF
 */

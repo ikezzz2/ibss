@@ -82,7 +82,7 @@
 	<br>
 	<br>
 	<input class="btn" type="submit" value="戻る"  formaction="reservation_input.php" >
-	<input id="btnR" class="btn" type="submit" value="次へ"   id = seatsub disabled="disabled">
+	<input class="btn" type="submit" value="次へ"   id = seatsub disabled="disabled">
 	<? } ?>
 </body>
 </html>

@@ -37,7 +37,7 @@
 
         <div>
         <button class="btn" formaction="toppage.php">戻るボタン</button>
-        <button class="btn" type="submit" name="next" formaction="">次へボタン</button>
+        <button id="btnR"class="btn" type="submit" name="next" formaction="">次へボタン</button>
 
 
 
