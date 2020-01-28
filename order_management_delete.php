@@ -33,7 +33,7 @@
           echo "注文が指定されていません。";
           echo "<form action = 'order_management.php' method = 'post'>";
           echo "<button class = 'btn' type = 'submit'>";
-          echo "注文管理画面へ";
+          echo "注文管理へ";
           echo "</button>";
           echo "</form>";
           echo "</body>";
