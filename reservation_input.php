@@ -117,7 +117,7 @@
 			echo "value = ".$row[0]["numofpeople"];
 		}
 		?>
-		required><br>
+	 	max = 50  required><br>
 		<dt>飲み放題コース</dt>
   <dd><select class="bx" name=reservation_info[example] id = "select" onchange="setfintime()"  required></dd>
   <option value="none">なし</option>
