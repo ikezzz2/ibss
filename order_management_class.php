@@ -7,13 +7,7 @@
 
     // 注文管理画面を生成するためのhtmlを格納する
     private function order_management(){
-      try{
-        // PDOインスタンスを生成
-        $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
-      }catch(Exception $e){
-        // エラーメッセージ
-        $res = $e -> getMessage();
-      }
+      $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
       $sql = "select orderid, productname, seatnum, servingflag from orderaccept";
       $stmt = $pdo->prepare($sql);
@@ -29,7 +23,7 @@
           $this->order_management_html .= "<tr>";
           $this->order_management_html .= "<td>".$row['productname']."</td>";
           $this->order_management_html .= "<td>".$row['seatnum']."</td>";
-          $this->order_management_html .= "<td><input class='chekbox' type = \"checkbox\" name = \"product[]\" value = \"".$row['orderid']."\"></td>";
+          $this->order_management_html .= "<td><input type = \"checkbox\" name = \"product[]\" value = \"".$row['orderid']."\"></td>";
           $this->order_management_html .= "</tr>";
         }
       }
@@ -45,13 +39,7 @@
 
     // 注文受付テーブルの更新処理を行う(引数:注文ID)
     public function order_management_update($served_order){
-      try{
-        // PDOインスタンスを生成
-        $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
-      }catch(Exception $e){
-        // エラーメッセージ
-        $res = $e -> getMessage();
-      }
+      $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
       foreach($served_order as $row){
         $sql_update = "update orderaccept set servingflag = 1 where orderid = ?";
@@ -62,16 +50,10 @@
 
     // 注文受付テーブルの商品の削除処理を行う(引数:注文ID)
     public function order_management_delete($delete_order){
-      try{
-        // PDOインスタンスを生成
-        $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
-      }catch(Exception $e){
-        // エラーメッセージ
-        $res = $e -> getMessage();
-      }
+      $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
-      foreach($delete_order as $row){
-        $sql_delete = "delete from orderaccept where orderid = ?";
+      foreach($delete_order as $row){ // 配膳フラグが0のものだけ削除する
+        $sql_delete = "delete from orderaccept where orderid = ? and servingflag = 0";
   			$stmt_delete = $pdo -> prepare($sql_delete);
   			$stmt_delete -> execute(Array($row));
       }
@@ -79,13 +61,7 @@
 
     // 注文削除確認画面を生成するためのhtmlを格納する(引数:注文ID)
     private function generate_order_management_check($delete_order){
-      try{
-        // PDOインスタンスを生成
-        $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
-      }catch(Exception $e){
-        // エラーメッセージ
-        $res = $e -> getMessage();
-      }
+      $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
       // 削除しますか？の表記をいれる
       $this->order_management_html = "<p>以下の注文を削除しますか?</p>";
