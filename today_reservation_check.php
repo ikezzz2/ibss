@@ -81,6 +81,10 @@ function draw_reservation(){
     hours = new Date().getHours() ;
     var rect_hour = start_hour - hours   ;
     var rect_finish = finish_hour - start_hour;
+		//context3.strokeStyle=a71fff;
+		context3.strokeStyle="blue";  //線の色を青に指定
+  	context3.fillStyle="red";     //塗りつぶしの色を赤に指定
+
     context3.strokeRect(200*( 2 + rect_hour + (start_minute / 60)),40 + (120*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,70);
     context3.font = "30px serif";
     context3.fillText(<?php echo "'".$reservation["name"]."'"; ?>, 200*( 2 + rect_hour + (start_minute / 60)) + 10, 40 + (120*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
