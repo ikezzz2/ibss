@@ -25,10 +25,14 @@ input, button, textarea, select {
 }
 #btnL{
   float: left;
+  text-align: center;
+
 }
 #btnR{
   float: right;
-  margin-right: 100px
+  margin-right: 100px;
+  text-align: center;
+
 }
 table{
 
