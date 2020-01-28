@@ -64,7 +64,12 @@ if (isset($_POST["login"])) {
         <h1 style="padding-right: 160px; padding-top: 140px;">IBSSログイン画面</h1>
         <br>
         <form id="loginForm" name="loginForm" action="" method="POST">
-                <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
+                <div>
+                  <p style="padding-right: 140px;">
+                  <font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?>
+                  </font>
+                </p>
+                </div>
                 <p style="padding-right: 180px;">
                 <label for="userid">ユーザーID</label><input type="text" id="userid" name="userid" placeholder="ユーザーIDを入力" value="<?php if (!empty($_POST["userid"])) {echo htmlspecialchars($_POST["userid"], ENT_QUOTES);} ?>">
               </p>

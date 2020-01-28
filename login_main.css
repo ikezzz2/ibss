@@ -19,13 +19,13 @@ input, button, textarea, select {
   input[type="text"]{
     width: 290px;
     height: 30px;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   input[type="password"]{
     width: 290px;
     height: 30px;
-    font-size: 30px;
+    font-size: 25px;
   }
 
 
