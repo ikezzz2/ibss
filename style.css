@@ -61,10 +61,8 @@ input[name="tab_item"] {
 
 
 
-button, textarea, select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+input, button, textarea, select {
+
 }
 
 input[type="text"]{
