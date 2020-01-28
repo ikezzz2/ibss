@@ -4,7 +4,7 @@
 	if(!isset($_POST["reservation_info"])){
 		echo "手順が誤っています。やり直してください";
 		echo "	<form action='toppage.php'  method='post'>";
-		echo "<input type='submit' value='TOPに戻る'   >";
+		echo "<input class='btn' type='submit' value='TOPに戻る'   >";
 		echo "</form>";
 }else{
   $seatnums = $seat->get_number_of_seat();
@@ -75,7 +75,7 @@
   <div class = "float_test">
 
   <form action=''  method='post' id = "all">
-		<p class="size">
+
     <?php
     /*  echo "	<form action=''  method='post' id = ".substr($key["starthour"],11,5)."".$key['name'].">";
       echo "    ";
@@ -95,27 +95,32 @@
       echo "座席番号:".$seatnum[0]."<br>";
     }
     foreach ($row as $key){
+
       print_r("<input type= 'hidden' name = reservation_info[return] value = ".$_POST["reservation_info"]["return"] .">");
       print_r("<input type= 'hidden' name = reservation_info[date_info] value = ".$_POST["reservation_info"]["date_info"] .">");
       echo "<input class='bx' type = 'text' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".$key['name']." form = 'all'>";
-      echo substr($key["starthour"],10,6)."〜";
+			echo substr($key["starthour"],10,6)."〜";
       echo substr($key["finhour"],10,6);
-      echo "</form>";
-      echo "<br>";
+			echo "<br>";
+			echo "</form>";
+
+
       }
+			echo "<br>";
+
     }
 		if($resnum == 0){
 			echo "予約がありません。";
 				if($_POST["reservation_info"]["return"] == 0){
 			?>
-		</p>
+
 				<input type= "hidden" name = reservation_info[date_info] value = <?php echo "'".$_POST["reservation_info"]["date_info"]."'" ?>>
-			  <input type="submit" value = "戻る" formaction = "today_reservation_check.php"  form = "all">
+			  <input class="btn" type="submit" value = "戻る" formaction = "today_reservation_check.php"  form = "all">
 				<?php
 			}else{
 				?>
 					<input type= "hidden" name = reservation_info[date_info] value = <?php echo "'".$_POST["reservation_info"]["date_info"]."'" ?>>
-					<input type="submit" value = "戻る" formaction = "day_input_reservation_check.php"  form = "all">
+					<input class="btn" type="submit" value = "戻る" formaction = "day_input_reservation_check.php"  form = "all">
 				<?php
 				}
 		}else{
@@ -129,7 +134,9 @@
     if($row == NULL){
       continue;
     }
+		echo "<br>";
     foreach ($row as $key){
+
       echo "  <form action='reservation_input.php'  method='post'  >";
       print_r("<input type= 'hidden'  name = reservation_info[return]  value = ".$_POST["reservation_info"]["return"] .">");
 			echo '<input type= "hidden" name = reservation_info[return] value = 2>';
@@ -142,14 +149,15 @@
       print_r("<input type= 'hidden' name = reservation_info[".$key2."] value = ".$key[$key2] .">");
       }
       */
-			echo "<br>";
-      print_r("<input class='btn' type= 'submit' value = '編集'>");
+			//echo "<br>";
+      print_r("<input class='btnE' type= 'submit' value = '編集'>");
       echo "</form>";
+
     }
     echo "<br>";
   }
     ?>
-     <br>
+
   </div>
 
   <div class = "float_test">
@@ -168,9 +176,10 @@
 
 		echo "<br>";
       echo "<input class='chekbox' type = 'checkbox' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".substr($key["starthour"],11,8)."".$key['seatnum']." onclick = 'check()'  >";
-      echo "<br>";
+
     }
     echo "<br>";
+		echo "<br>";
     }
     echo "</div>";
     echo '<div class = "float_none">';

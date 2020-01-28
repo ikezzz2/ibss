@@ -21,7 +21,7 @@
     <body>
         <form id="select_seat" name="select_seat" action="" method="POST">
         座席番号
-        <select class="bx" style="width: 100px" name="example" required>
+        <select class="bx" style="width: 200px" name="example" required>
         <option value="none" ></option>
 
         <?php
@@ -32,6 +32,7 @@
         }
         ?>
         </select>
+        <br>
         <br>
 
         <div>

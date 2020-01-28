@@ -39,7 +39,7 @@ div.scroll {
 
 /*ボタンの設定*/
 .btn{
-  margin-top: 10%;
+  margin-top: 50px;
   font-size: 40px;
   display: inline-block;
   padding: 0.5em 1em;
@@ -48,8 +48,8 @@ div.scroll {
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
-  height: 150px;
-  width: 290px;
+  height: 180px;
+  width: 300px;
 }
 
 .btn:active {
@@ -60,7 +60,7 @@ div.scroll {
 }
 
 #btnR{
-  margin-left: 20%;
+  margin-left: 40%;
 }
 
 /*ラジオボタンの設定1(座席番号)*/
@@ -75,7 +75,7 @@ div.scroll {
 .bx1{
   width: 130px;
   font-size: 80px;
-  margin-left: 50px;
+  margin-left: 200px;
 }
 
 /*全体の設定*/

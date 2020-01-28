@@ -4,7 +4,7 @@
 	if(!isset($_POST["reservation_info"])){
 		echo "手順が誤っています。やり直してください";
 		echo "	<form action='toppage.php'  method='post'>";
-		echo "<input type='submit' value='TOPに戻る'   >";
+		echo "<input class='btn' type='submit' value='TOPに戻る'   >";
 		echo "</form>";
 }else{
   $seatnums = $seat->get_number_of_seat();
@@ -56,7 +56,7 @@
 	  foreach ($seatlist as $key ) {
       if(!in_array($key, $row)){
 			echo "<tr><td>".$key["seatnum"]."<td>";
-			echo "<input type='checkbox' name= seatnum[] value='".$key["seatnum"]."'  onclick='check()' ></tr></td>";
+			echo "<input class='chekbox' type='checkbox' name= seatnum[] value='".$key["seatnum"]."'  onclick='check()' ></tr></td>";
     }else if(isset($_POST["resid"] )){
 			$reskey = array_keys($_POST["resid"]);
 				if(substr($reskey[0],8,2) == $key["seatnum"]){
@@ -82,7 +82,7 @@
 	<br>
 	<br>
 	<input class="btn" type="submit" value="戻る"  formaction="reservation_input.php" >
-	<input class="btn" type="submit" value="次へ"   id = seatsub disabled="disabled">
+	<input id="btnR" class="btn" type="submit" value="次へ"   id = seatsub disabled="disabled">
 	<? } ?>
 </body>
 </html>

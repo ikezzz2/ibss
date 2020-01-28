@@ -22,6 +22,30 @@
   border-bottom: none;/*線を消す*/
 }
 
+.btnE{
+  margin-top: 5px;/*要素間の間隔*/
+  margin-left: 50px;
+  margin-right: 40px;
+  font-size: 35px;/*文字サイズ*/
+  display: inline-block;/*パディングの重複対策*/
+  padding: 4px 1em;
+  text-decoration: none;
+  background: #668AD8;/*ボタン色*/
+  color: #FFF;/*文字色*/
+  border-bottom: solid 4px #627295;/*ボタンの影*/
+  border-radius: 3px;
+  /*ボタンサイズ*/
+  height: 60px;
+  width: 200px;
+}
+
+.btnE:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
 #btnR{
   margin-left: 50%;
 }
@@ -66,13 +90,9 @@ table th{
   height: 50px;
 }
 
-/*PHP文内にある文字の文字サイズ*/
-p.size{
-  font-size: 35px;
-}
-
 /*チェックボックスの設定*/
 .chekbox{
+  margin-bottom: 20px;
   transform:scale(3);/*チェックボックスのサイズ*/
 }
 
