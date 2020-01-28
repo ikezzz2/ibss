@@ -54,10 +54,10 @@ private function generate_seat_check(){//座席情報確認画面生成
       $finish_hour = 23;
     }
     $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
-    $sql = "SELECT * FROM ordermanagement WHERE seatnum = ".$seatnum." AND finhour >= ? ";
+    $sql = "SELECT * FROM ordermanagement WHERE seatnum = ".$seatnum." AND finhour >= ? AND date = ?";
     $finhour = date("Y")."-".date("m")."-".date("d")." ".$start_hour.":00:00";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($finhour));
+    $stmt->execute(array($finhour,date("Y-m-d")));
     $row = $stmt->fetchAll();
     return $row;
   }
