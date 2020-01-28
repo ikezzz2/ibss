@@ -61,19 +61,19 @@ if (isset($_POST["login"])) {
     </head>
     <body>
       <center>
-        <h1 style="padding-right: 150px; padding-top: 130px;">IBSSログイン画面</h1>
+        <h1 style="padding-right: 160px; padding-top: 140px;">IBSSログイン画面</h1>
         <br>
         <div class="form">
         <form id="loginForm" name="loginForm" action="" method="POST">
-          <legend style="padding-right: 150px;">ログインフォーム</legend>
+          <legend style="padding-right: 160px;">ログインフォーム</legend>
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
-                <p style="padding-right: 150px;">
+                <p style="padding-right: 160px;">
                 <label for="userid">ユーザーID</label><input type="text" class="from" id="userid" name="userid" placeholder="ユーザーIDを入力" value="<?php if (!empty($_POST["userid"])) {echo htmlspecialchars($_POST["userid"], ENT_QUOTES);} ?>">
               </p>
-                <p style="padding-right: 150px;">
+                <p style="padding-right: 160px;">
                 <label for="password">パスワード</label><input type="password" class="from" id="password" name="password" value="" placeholder="パスワードを入力">
               </p>
-                <p style="padding-right: 150px;">
+                <p style="padding-right: 160px;">
                 <input type="submit" class="btn" id="login" name="login" value="ログイン">
               </p>
         </form>
