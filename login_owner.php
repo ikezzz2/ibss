@@ -72,13 +72,13 @@
       <br>
       <br>
       <p style="padding-right: 10px;">
-      <input type="submit" class="btn" id="btn" name="btn" value="ログイン">
+      <input type="submit" class="btn" id="btn" name="exe" value="ログイン">
     </p>
     </form>
 
     <form name='top'>
       <p style="padding-right: 340px;">
-    <input type="submit" class="btn" id="btn" name="btn" value="TOPへ" onClick="form.action='toppage.php';return true">
+    <input type="submit" class="btn" id="btn" name="top" value="TOPへ" onClick="form.action='toppage.php';return true">
   </p>
   </center>
   </body>
