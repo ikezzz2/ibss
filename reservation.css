@@ -1,18 +1,33 @@
 
 /*ボタンのプロパティ*/
 .btn{
-  margin: 50px 20px;/*要素間の間隔*/
-  font-size: 50px;/*文字サイズ*/
-  display: inline-block;/*パディングの重複対策*/
+  margin: 0.5em 1em;
+  position: relative;
+  max-width: 250px;
+  text-align: center;
+  background-color: #668AD8;
+  font-size: 50px;
+  color: #FFF;
+  -webkit-transition: none;
+  transition: none;
+  text-decoration: none!important;
   padding: 0.5em 1em;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 #627295;
+  /*
+  margin: 50px 20px;/*要素間の間隔*/
+/*  font-size: 50px;/*文字サイズ*/
+/*  display: inline-block;/*パディングの重複対策*/
+/*  padding: 0.5em 1em;
   text-decoration: none;
   background: #668AD8;/*ボタン色*/
-  color: #FFF;/*文字色*/
-  border-bottom: solid 4px #627295;/*ボタンの影*/
-  border-radius: 3px;
+/*  color: #FFF;/*文字色*/
+/*  border-bottom: solid 4px #627295;/*ボタンの影*/
+/*  border-radius: 3px;
   /*ボタンサイズ*/
-  height: 130px;
+/*  height: 130px;
   width: 250px;
+  */
 }
 
 .btn:active {
