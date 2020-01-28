@@ -7,8 +7,8 @@ input, button, textarea, select {
   border-radius: 10px;
   position: relative;
   display: inline-block;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   font-size: 30px;
   line-height: 50px;
   color: #000;
@@ -19,8 +19,8 @@ padding: 0;
     border-radius: 10px;
     position: relative;
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     font-size: 30px;
     line-height: 50px;
     color: #000;
@@ -32,13 +32,14 @@ padding: 0;
       border-radius: 10px;
       position: relative;
       display: inline-block;
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       font-size: 30px;
       line-height: 50px;
       color: #000;
       background: #AEFFBD;
       padding: 0;
+
 
       }
       .btn4 {
@@ -72,7 +73,7 @@ padding: 0;
             position: relative;
             text-align: left;
             display: inline-block;
-            width: 140px;
+            width: 145px;
             height: 50px;
             font-size: 26px;
             line-height: 50px;
