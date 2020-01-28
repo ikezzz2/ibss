@@ -1,9 +1,8 @@
 
-
 <?php
   //check_login_ownerのメソッド部分
     if(isset($_POST["exe"])){
-      
+
     $db_hostname    = 'localhost';
     $db_username    = 'root';
     $db_password    = '';
@@ -16,7 +15,7 @@
         $sql = "SELECT * FROM ownerinfo";
         $stmt = $pdo->query($sql);
         while($row = $stmt->fetch()){
-          
+
           if($row['id'] == 0 && htmlspecialchars($row['password'],ENT_QUOTES,'UTF-8') == $name){
             $check = true;
           }
@@ -30,11 +29,11 @@
           header("location: login_owner.php?A=".urlencode('もう一度入力してください'));
         }
       }
-    
+
 ?>
 
 
-<?php 
+<?php
   if(isset($_GET['A'])){
     $message = $_GET['A'];
     $alert = "<script type='text/javascript'>alert('".$message."');</script>";
@@ -48,23 +47,69 @@
   <meta charset="utf-8">
   </head>
   <body>
-    <h1 class="login-moji">ログイン</h1>
+    <center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="padding-right: 20px;">ログイン</h1>
     <!--generate_login_inputとwrite_login_inputのメソッド部分-->
     <form method="post" action="login_owner.php"> <?php //action="check_login_owner.php" ?>
       <input type="password" id="pass_input" name="pass" placeholder = "パスワードを入力" required><br>
-      <input type="submit" class="exe" name="exe" value="ログイン">
+      <br>
+      <br>
+      <p style="padding-right: 10px;">
+      <input type="submit" class="btn" id="btn" name="btn" value="ログイン">
+    </p>
     </form>
-   
+
     <form name='top'>
-    <input type="submit" class="top" name="top" value="TOPへ" onClick="form.action='toppage.php';return true">
+      <p style="padding-right: 340px;">
+    <input type="submit" class="btn" id="btn" name="btn" value="TOPへ" onClick="form.action='toppage.php';return true">
+  </p>
+  </center>
   </body>
 </html>
 <style>
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 body{
   position:relative;
   text-align: center;
-  color: #0066FF;
+  color: #000000;
 }
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5em 1em;
+  font-size: 25px;
+  text-decoration: none;
+  background: #668AD8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  width: 140px;
+  height: 80px;
+  }
+.btn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
 h1{
   font-size:5vw;
 }
@@ -81,12 +126,7 @@ input[type="submit"]{
   position:absolute;
   /*background-color: #0066FF;
   color: #ffffff;*/
-  width:10%;
-  height:7%;
-  font-size: 2vw;
   /*border-radius: 20px;*/
-
-
   text-decoration: none;
   background: #668AD8;/*ボタン色*/
   color: #FFF;
@@ -94,24 +134,10 @@ input[type="submit"]{
   border-radius: 3px;
 }
 
-.exe{
-  /*margin:10px 10px 10px 0px;*/
-  left:45%;
-  top: 50%;
-  margin-left:-2.5vw;
-}
-
-.top{
-  /*margin:10px 10px 10px 0px;*/
-  left:5%;
-  top: 60%;
-}
 
 input[type="password"]{
-  width:50%;
-  height:10%;
-  min-width:250px ;
-  min-height:30px ;
+  width:400px;
+  height:50px;
   font-size:3vw;
 }
 </style>
