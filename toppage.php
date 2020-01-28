@@ -1,10 +1,13 @@
 <?php
-  //  include('login_class.php');
-    //  $login = new login_class();
-      //$login->ses_start();
+      include('login_class.php');
+      $login = new login_class();
+      $login->ses_start();
+
+      $login ->delete_yesterday();
+      
+
 
       if(isset($_POST["log_out"])){
-        echo 1234567;
         session_destroy();
         header("location:login_main.php");
       }
