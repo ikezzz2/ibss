@@ -11,9 +11,10 @@ input, button, textarea, select {
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
-  font-size: 18px;
+  font-size: 22px;
   width: 120px;
   height: 80px;
+  padding: 0px;
   }
 .btn:active {
   /*ボタンを押したとき*/
