@@ -55,12 +55,12 @@
         if(isset($_GET["addcheck"]) && isset($_GET["select_category_input"])){
             $sc = $_GET["select_category_input"];
             if($sc == "shoki"){
-                header("location: menu_add.php?A=".urlencode('追加エラーです'));
+                header("location: menu_add.php?A=".urlencode('カテゴリーを選択してください'));
             }else if($sc == "newcate"){
                 if(isset($_GET["newcategory"])){
                     $sc_back = $sc; 
                     $sc = $_GET["newcategory"];
-                    if($sc == "") header("location: menu_add.php?A=".urlencode('追加エラーです'));
+                    if($sc == "") header("location: menu_add.php?A=".urlencode('新規カテゴリー名を入力してください'));
                 }else{
                     header("location: menu_add.php?A=".urlencode('追加エラーです'));
                 }
@@ -77,10 +77,10 @@
                        if($addvalue[0][$i] == 0){
                             continue;
                        }else{
-                            header("location: menu_add.php?A=".urlencode('追加エラーです'));
+                            header("location: menu_add.php?A=".urlencode('金額だけ入力されている欄があります'));
                        }
                    }else if($addvalue[0][$i] <= 0 || strpos($addvalue[0][$i],'.') || strpos($addvalue[0][$i],'．')){
-                        header("location: menu_add.php?A=".urlencode('追加エラーです'));
+                        header("location: menu_add.php?A=".urlencode('金額は自然数を入力してください'));
                    }
                    for($j = 0; $j < count($menu_name); $j++){
                         if($menu_name[$j] == $addname[0][$i]) header("location: menu_add.php?A=".urlencode('同じメニュー名が存在しています')); 
@@ -97,7 +97,7 @@
                     echo '">';
                     $check_add++;
                 }
-                if($check_add == 0) header("location: menu_add.php?A=".urlencode('追加エラーです'));
+                if($check_add == 0) header("location: menu_add.php?A=".urlencode('追加情報を入力してください'));
             }else{
                 header("location: menu_add.php?A=".urlencode('追加エラーです'));
             }

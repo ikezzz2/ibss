@@ -68,7 +68,7 @@ body{
 h1{
   font-size:5vw;
 }
-input[type="submit"]{
+/*input[type="submit"]{
   position:absolute;
   background-color: #0066FF;
   color: #ffffff;
@@ -76,6 +76,22 @@ input[type="submit"]{
   height:10%;
   font-size: 2vw;
   border-radius: 20px;
+}*/
+input[type="submit"]{
+  position:absolute;
+  /*background-color: #0066FF;
+  color: #ffffff;*/
+  width:10%;
+  height:7%;
+  font-size: 2vw;
+  /*border-radius: 20px;*/
+
+
+  text-decoration: none;
+  background: #668AD8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
 }
 
 .exe{

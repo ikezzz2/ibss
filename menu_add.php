@@ -39,12 +39,12 @@
   <title>追加</title>
   <meta charset="utf-8">
   <style>
-       div.scroll {
+       /*div.scroll {
         width: 400px;
         height: 200px;
         overflow: scroll;
         overflow-x: hidden;
-    }
+    }*/
   </style>
   <script type="text/javascript">
   //set_add_categoryのメソッド部分
@@ -79,28 +79,164 @@
         </select>
 
             <?php if(isset($_GET["back_newcategory"])): ?>
-              <input name="newcategory" type="text" value="<?php echo $select_category?>" style="margin:10px 10px 10px 0px; float:left;">
+              <input class="newcategory" name="newcategory" type="text" value="<?php echo $select_category?>">
             <?php else: ?>
-              <input name="newcategory" type="text" style="margin:10px 10px 10px 0px; float:left;">
+              <input class="newcategory" name="newcategory" type="text">
             <?php endif ?>
             <br /><br /><br />
         <?php 
-            echo "メニュー名　　　　　　金額<br />";
+          echo '<div class="menu_mei">メニュー名</div>';
+          echo '<div class="menu_kin">金額</div>';
+          echo "<br /><br />";
             echo '<div class="scroll">';
             //set_add_listのメソッド部分
             
             for($j = 0; $j < 20; $j++){
-              echo '<input type="text" name="addname[]" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px; float:left;" required>';
-              echo '<input type="int" name="addvalue[]" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required>';
+              echo '<input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px;  float:left;" required>';
+              echo '<input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required>';
               echo "<br /><br />";
             }
             echo "</div>";
         ?>
-        <input type="submit" name="addcheck" value="確認" style="margin:10px 10px 10px 140px; float:left;" onClick="form.action='menu_check_add.php';return true">
+        <input type="submit" class="addcheck" name="addcheck" value="確認" onClick="form.action='menu_check_add.php';return true">
         </form>
         <br /><br />
         <form name="back">
-        <input type="submit" name="exe3" value="戻る" style="margin:10px 10px 10px 0px; float:left;" onClick="form.action='menutop_edit.php';return true">
+        <input type="submit" class="menutop_back" name="exe3" value="戻る" onClick="form.action='menutop_edit.php';return true">
       </form>
   </body>
   </html>
+  <style>
+    body{
+        position:relative;
+        /*text-align: center;*/
+        color: #000000;
+        font-size: 2vw;
+    }
+    h1{
+        text-align: center;
+        font-size:4vw;
+        color: #0066FF;
+    }
+    .newcategory{
+      position:absolute; 
+      top:7vw; 
+      left:58%;
+      width:18%;
+      height:5%; 
+      min-width:250px ;
+      min-height:30px ;
+      font-size:1.5vw;
+      float:left;
+    }
+    div.menu_mei{
+        position:absolute;
+        font-size:2vw;
+        top: 15vw;
+        left: 28%;
+    }
+    div.menu_kin{
+        position:absolute;
+        font-size:2vw;
+        top: 15vw;
+        left: 58%;
+        float: left;
+    }
+    div.cate{
+        position:absolute;
+        top: 15vw;
+        left: 25%;
+    }
+    div.scroll {
+    top: 19vw;
+    font-size:2vw;
+    position:absolute;
+    left: 28%;
+    width: 60%;
+    height: 40%;
+    overflow: scroll;
+    overflow-x: hidden;
+    }
+
+table{
+    font-size: 1.5vw;
+}
+table.add_menu{
+    left: 0%;
+    float:left;
+}
+table.add_value{
+    float:left;
+}
+table.add_menu td{
+    padding: 1vw 0vw;
+}
+table.add_value td{
+    padding: 1vw 0vw;
+}
+
+select{
+  position:absolute;
+  top: 6vw;
+  left: 28%;
+  width:18%;
+  height:5%;
+  min-width:200px ;
+  min-height:30px ;
+  font-size:1.5vw;
+}
+
+    
+input[type="submit"]{
+  position:absolute;
+  /*background-color: #0066FF;
+  color: #ffffff;*/
+  width:10%;
+  height:7%;
+  font-size: 2vw;
+  /*border-radius: 20px;*/
+
+
+  text-decoration: none;
+  background: #668AD8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+input[type="submit"]:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.addcheck{
+  /*margin:10px 10px 10px 0px;*/
+  left:45%;
+  top: 85%;
+  margin-left:-2.5vw;
+}
+
+.menutop_back{
+  /*margin:10px 10px 10px 0px;*/
+  left:5%;
+  top: 90%;
+}
+.menu_name{
+  position:absolute;
+  left: 0%;
+  width:30%;
+  height:10%;
+  min-width:200px ;
+  min-height:30px ;
+  font-size:1.5vw;
+}
+.menu_value{
+  position:absolute;
+  left: 50%;
+  width:30%;
+  height:10%;
+  min-width:150px ;
+  min-height:30px ;
+  font-size:1.5vw;
+}
