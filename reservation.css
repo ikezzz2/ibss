@@ -24,6 +24,7 @@
 
 .btnE{
   margin-top: 5px;/*要素間の間隔*/
+  margin-bottom: 5px;
   margin-left: 50px;
   margin-right: 40px;
   font-size: 30px;/*文字サイズ*/
@@ -100,8 +101,9 @@ table td{
 
 /*チェックボックスの設定*/
 .chekbox{
-  margin-bottom: 20px;
-  transform:scale(4.5);/*チェックボックスのサイズ*/
+  margin-top: 20px;
+  margin-bottom: 23px;
+  transform:scale(4);/*チェックボックスのサイズ*/
 }
 
 /*全体の設定*/
