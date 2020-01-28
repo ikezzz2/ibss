@@ -2,7 +2,7 @@
 /*ボタンのプロパティ*/
 .btn{
   margin: 50px 20px;/*要素間の間隔*/
-  font-size: 25px;/*文字サイズ*/
+  font-size: 50px;/*文字サイズ*/
   display: inline-block;/*パディングの重複対策*/
   padding: 0.5em 1em;
   text-decoration: none;
@@ -11,8 +11,8 @@
   border-bottom: solid 4px #627295;/*ボタンの影*/
   border-radius: 3px;
   /*ボタンサイズ*/
-  height: 60px;
-  width: 200px;
+  height: 130px;
+  width: 250px;
 }
 
 .btn:active {
@@ -26,7 +26,7 @@
   margin-top: 5px;/*要素間の間隔*/
   margin-left: 50px;
   margin-right: 40px;
-  font-size: 35px;/*文字サイズ*/
+  font-size: 50px;/*文字サイズ*/
   display: inline-block;/*パディングの重複対策*/
   padding: 4px 1em;
   text-decoration: none;
@@ -35,7 +35,7 @@
   border-bottom: solid 4px #627295;/*ボタンの影*/
   border-radius: 3px;
   /*ボタンサイズ*/
-  height: 60px;
+  height: 90px;
   width: 200px;
 }
 
@@ -47,7 +47,7 @@
 }
 
 #btnR{
-  margin-left: 50%;
+  margin-left: 40%;
 }
 
 /*定義リストの設定*/
