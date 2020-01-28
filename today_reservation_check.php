@@ -43,7 +43,7 @@ window.addEventListener("load", function(){
       draw_seat_num(<?php echo $i ?>);
     <?php
     }
-    ?>    
+    ?>
     draw_reservation();
 }, false);
 
@@ -83,7 +83,7 @@ function draw_reservation(){
     var rect_finish = finish_hour - start_hour;
     context3.fillStyle="aqua";
     context3.fillRect(200*( 2 + rect_hour + (start_minute / 60)) - 150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,50);
-    context3.fillStyle="black"; 
+    context3.fillStyle="black";
     context3.strokeRect(200*( 2 + rect_hour + (start_minute / 60))-150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  (finish_minute / 60)) - 5,50);
     context3.font = "30px serif";
     context3.fillText(<?php echo "'".$reservation["name"]."'"; ?>, 200*( 2 + rect_hour + (start_minute / 60)) + 10-150 , 40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
@@ -118,7 +118,7 @@ if (canvas.getContext) {
   var height = canvas.height ;
   var width = canvas.width ;
   for(var j = 50;j <= width -100  ; j += 200){
-    jj = j + 150;	
+    jj = j + 150;
     context.font = "30px serif";
     settime = hours + ((jj / 200) - 2)
     if(settime > 24){
@@ -151,13 +151,16 @@ if (canvas.getContext) {
 </script>
 </head>
 <body>
+	<br>
+	<br>
+	<h1>
 <?php
 echo date("Y-m-d");
 ?>
+</h1>
 	<center>
   <?php $seat->today_reservation_check(1) ?>
   <div id="sample">
-		<br>
 
   <h2 style="padding-right: 200px;">座席時間割<h2><br>
 
