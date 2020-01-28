@@ -34,7 +34,7 @@
 /*スクロールバーの設定*/
 div.scroll {
   width: 1200px;
-  height: 500px;
+  height: 700px;
   overflow: scroll;
 }
 
