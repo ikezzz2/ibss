@@ -153,8 +153,8 @@
 			//echo "<br>";
       print_r("<input class='btnE' type= 'submit' value = '編集'>");
       echo "</form>";
-
     }
+		echo "<br>";
 		echo "</div>";//aaaa
     echo "<br>";
   }
@@ -181,6 +181,7 @@
       echo "<input class='chekbox' type = 'checkbox' name =  'resid[".substr($key["starthour"],11,8)."".$key['seatnum']."]' value =".substr($key["starthour"],11,8)."".$key['seatnum']." onclick = 'check()'  >";
 
     }
+		echo "<br>";
 		echo "</div>";//aaaaa
 
     echo "<br>";
