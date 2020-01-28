@@ -12,7 +12,7 @@ input, button, textarea, select {
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
-  font-size: 25px;
+  font-size: 40px;
   width: 120px;
   height: 80px;
   padding: 0px;
@@ -26,13 +26,13 @@ input, button, textarea, select {
 #btnL{
   float: left;
   text-align: center;
-
+  padding: 0px;
 }
 #btnR{
   float: right;
   margin-right: 100px;
   text-align: center;
-
+  padding: 0px;
 }
 table{
 
