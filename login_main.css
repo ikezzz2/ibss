@@ -11,19 +11,20 @@ input, button, textarea, select {
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
-  height: 50px;
+  height: 60px;
+  width: 100px;
   }
 
   input[type="text"]{
-    width: 220px;
+    width: 290px;
     height: 30px;
-    font-size: 30px;
+    font-size: 35px;
   }
 
   input[type="password"]{
-    width: 220px;
+    width: 290px;
     height: 30px;
-    font-size: 30px;
+    font-size: 35px;
   }
 
 
