@@ -92,6 +92,7 @@ input, button, textarea, select {
 
 body{
   position:relative;
+  background-color: #eeeeee;
   text-align: center;
   color: #000000;
 }
