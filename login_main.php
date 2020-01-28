@@ -30,13 +30,11 @@ if (isset($_POST["login"])) {
         // 3. エラー処理
         try {
             $pdo = new PDO($dsn, 'root', ''); //デーブルに接続
-            $sql = "select  password from userinfo where BINARY id = ?"; // SQL文を作成
+            $sql = "select  password from userinfo where id = ?"; // SQL文を作成
             $stmt = $pdo -> prepare($sql);//SQLを実行するための準備
             $stmt -> execute(array($_POST["userid"]));// SQLを実行
             $row = $stmt -> fetch(PDO::FETCH_ASSOC);
-            
-            //print_r($_POST);
-            if ($row["password"]!= NULL && password_verify ($_POST['password'] , $row['password'])){
+            if (password_verify ($_POST['password'] , $row['password']) === true){
                     $_SESSION['login'] = 1;
                     header("Location: toppage.php");  // TOP画面へ遷移
                     exit();  // 処理終了
@@ -63,21 +61,23 @@ if (isset($_POST["login"])) {
     </head>
     <body>
       <center>
-        <h1 style="padding-right: 90px;">IBSSログイン画面</h1>
+        <h1 style="padding-right: 150px; padding-top: 130px;">IBSSログイン画面</h1>
         <br>
+        <div class="form">
         <form id="loginForm" name="loginForm" action="" method="POST">
-          <legend style="padding-right: 90px;">ログインフォーム</legend>
+          <legend style="padding-right: 150px;">ログインフォーム</legend>
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
-                <p style="padding-right: 90px;">
-                <label for="userid">ユーザーID</label><input type="text" id="userid" name="userid" placeholder="ユーザーIDを入力" value="<?php if (!empty($_POST["userid"])) {echo htmlspecialchars($_POST["userid"], ENT_QUOTES);} ?>">
+                <p style="padding-right: 150px;">
+                <label for="userid">ユーザーID</label><input type="text" class="from" id="userid" name="userid" placeholder="ユーザーIDを入力" value="<?php if (!empty($_POST["userid"])) {echo htmlspecialchars($_POST["userid"], ENT_QUOTES);} ?>">
               </p>
-                <p style="padding-right: 90px;">
-                <label for="password">パスワード</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
+                <p style="padding-right: 150px;">
+                <label for="password">パスワード</label><input type="password" class="from" id="password" name="password" value="" placeholder="パスワードを入力">
               </p>
-                <p style="padding-right: 90px;">
+                <p style="padding-right: 150px;">
                 <input type="submit" class="btn" id="login" name="login" value="ログイン">
               </p>
         </form>
+      </div>
       </center>
     </body>
 </html>
