@@ -23,8 +23,9 @@
 }
 
 .btnE{
-  margin-top: 5px;/*要素間の間隔*/
-  margin-bottom: 5px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-left: 50px;
   margin-right: 40px;
   font-size: 30px;/*文字サイズ*/

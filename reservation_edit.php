@@ -106,7 +106,7 @@
 
 
       }
-			echo "<br>";
+
 
     }
 		if($resnum == 0){
@@ -136,6 +136,7 @@
     }
 		echo "<br>";
 		echo "<div>";//aaa
+		//echo "<br>";
     foreach ($row as $key){
 
       echo "  <form action='reservation_input.php'  method='post'  >";
@@ -154,9 +155,9 @@
       print_r("<input class='btnE' type= 'submit' value = '編集'>");
       echo "</form>";
     }
-		echo "<br>";
+
 		echo "</div>";//aaaa
-    echo "<br>";
+    //echo "<br>";
   }
     ?>
 
