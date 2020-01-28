@@ -21,7 +21,7 @@ private function generate_seat_check(){//座席情報確認画面生成
     $starthour = date("Y")."-".date("m")."-".date("d")." ".date("H").":".date("i").":".date("s");
     $finhour = date("Y")."-".date("m")."-".date("d")." ".date("H").":".date("i").":".date("s");
     $stmt2 = $pdo->prepare($sql2);
-    $stmt2->execute(array($row["seatnum"],$date,$starthour,$finhour));
+    $stmt2->execute(array($row["seatnum"],date("Y-m-d"),$starthour,$finhour));
     $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
     if($row2['count(*)'] > 0){//予約があるなら
       $this->seat_check .= "<tr><td>" .$row['seatnum']. "</td><td>使用中</td></tr>";
@@ -56,10 +56,10 @@ private function generate_seat_check(){//座席情報確認画面生成
       $finish_hour = 23;
     }
     $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
-    $sql = "SELECT * FROM ordermanagement WHERE seatnum = ".$seatnum." AND finhour >= ? ";
+    $sql = "SELECT * FROM ordermanagement WHERE seatnum = ".$seatnum." AND finhour >= ? AND date = ?  ";
     $finhour = date("Y")."-".date("m")."-".date("d")." ".$start_hour.":00:00";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($finhour));
+    $stmt->execute(array($finhour,date("Y-m-d")));
     $row = $stmt->fetchAll();
     return $row;
   }
