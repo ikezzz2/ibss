@@ -1,8 +1,8 @@
 <?php
-    include('login_class.php');
-      $login = new login_class();
-      $login->ses_start();
-    
+  //  include('login_class.php');
+    //  $login = new login_class();
+      //$login->ses_start();
+
       if(isset($_POST["log_out"])){
         echo 1234567;
         session_destroy();
@@ -14,11 +14,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
+
         <title>TOPページ</title>
         <link rel="stylesheet" href="toppage.css">
     </head>
     <body>
       <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     <h1 style="padding-right: 90px;">IBSS</h1>
     <form id="top_page" name="top_page" action="" method="POST">
         <div>
