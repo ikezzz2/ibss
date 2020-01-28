@@ -40,7 +40,7 @@ if (isset($_POST["login"])) {
                     exit();  // 処理終了
             } else {
                     // 認証失敗
-                    $errorMessage = 'ユーザーIDまたはパスワードに誤りがあります。';
+                    $errorMessage = 'ユーザーID or パスワードに誤りがあります。';
             }
         } catch (PDOException $e) {
             $errorMessage = 'データベースエラー';
