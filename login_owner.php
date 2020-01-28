@@ -62,18 +62,16 @@
     <br>
     <br>
     <br>
-    <h1 style="padding-right: 10px;">メニュー編集へログイン</h1>
+    <h1>メニュー編集へログイン</h1>
     <!--generate_login_inputとwrite_login_inputのメソッド部分-->
     <form method="post" action="login_owner.php"> <?php //action="check_login_owner.php" ?>
-      <p style="padding-right: 20px;">
+      <p style="padding-right: 10px;">
       <input type="password" id="pass_input" name="pass" placeholder="パスワードを入力" required>
     </p>
       <br>
       <br>
       <br>
-      <p style="padding-right: 10px;">
       <input type="submit" class="btn" id="btn" name="btn" value="ログイン">
-    </p>
     </form>
 
     <form name='top'>
