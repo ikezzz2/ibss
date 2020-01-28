@@ -80,7 +80,7 @@
     </script>
 
   </head>
-  <body>
+  <body -webkit-text-size-adjust: 100%;>
     <br>
     <br>
     <br>
