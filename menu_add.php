@@ -87,15 +87,22 @@
         <?php 
           echo '<div class="menu_mei">メニュー名</div>';
           echo '<div class="menu_kin">金額</div>';
-          echo "<br /><br />";
+          //echo "<br /><br />";
             echo '<div class="scroll">';
             //set_add_listのメソッド部分
-            
+            $create_table = "";
+            $create_table = '<table class="add_table">';
+            //$create_trtd = '<tr><td><input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px;  float:left;" required>';
+            //$create_trtd .= '</td></tr><tr><td><input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required></td></tr>';
             for($j = 0; $j < 20; $j++){
-              echo '<input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px;  float:left;" required>';
-              echo '<input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required>';
-              echo "<br /><br />";
+              //$create_table .= $create_trtd;
+              $create_table .= '<tr style="padding:2vw 0vw;"><td><input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px;  float:left;" required>';
+              $create_table .= '</td><td><input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required></td></tr><tr><td style="padding: 0vw 0vw 3vw 0vw;">　</td><td></td></tr>';
+              //echo '<input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px;  float:left;" required>';
+              //echo '<input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required>';
+              //echo "<br /><br />";
             }
+            echo $create_table;
             echo "</div>";
         ?>
         <input type="submit" class="addcheck" name="addcheck" value="確認" onClick="form.action='menu_check_add.php';return true">
@@ -119,26 +126,32 @@
         color: #0066FF;
     }
     .newcategory{
-      position:absolute; 
+      position:absolute;/*
       top:7vw; 
       left:58%;
       width:18%;
       height:5%; 
       min-width:250px ;
-      min-height:30px ;
+      min-height:20px ;*/
+      top:9vw; 
+      left:58%;
+      width:18%;
+      height:5%; 
+      min-width:250px ;
+      max-height:50px ;
       font-size:1.5vw;
       float:left;
     }
     div.menu_mei{
         position:absolute;
         font-size:2vw;
-        top: 15vw;
+        top: 17vw;
         left: 28%;
     }
     div.menu_kin{
         position:absolute;
         font-size:2vw;
-        top: 15vw;
+        top: 17vw;
         left: 58%;
         float: left;
     }
@@ -148,7 +161,7 @@
         left: 25%;
     }
     div.scroll {
-    top: 19vw;
+    top: 21vw;
     font-size:2vw;
     position:absolute;
     left: 28%;
@@ -158,18 +171,20 @@
     overflow-x: hidden;
     }
 
+    .
+
 table{
     font-size: 1.5vw;
 }
-table.add_menu{
+table.add_table{
     left: 0%;
     float:left;
 }
 table.add_value{
     float:left;
 }
-table.add_menu td{
-    padding: 1vw 0vw;
+table.add_table td{
+    padding: 0vw 0vw 3vw 0vw;
 }
 table.add_value td{
     padding: 1vw 0vw;
@@ -177,18 +192,18 @@ table.add_value td{
 
 select{
   position:absolute;
-  top: 6vw;
+  top: 7vw;
   left: 28%;
   width:18%;
   height:5%;
   min-width:200px ;
-  min-height:30px ;
+  max-height:50px ;
   font-size:1.5vw;
 }
 
     
 input[type="submit"]{
-  position:absolute;
+  position:fixed;
   /*background-color: #0066FF;
   color: #ffffff;*/
   width:10%;
@@ -211,16 +226,19 @@ input[type="submit"]:active {
 }
 
 .addcheck{
+  position:absolute;
   /*margin:10px 10px 10px 0px;*/
   left:45%;
-  top: 85%;
+  /*top: 85%;*/
+  top:55%;
   margin-left:-2.5vw;
 }
 
 .menutop_back{
+  position:absolute;
   /*margin:10px 10px 10px 0px;*/
   left:5%;
-  top: 90%;
+  top: 60%;
 }
 .menu_name{
   position:absolute;
@@ -230,6 +248,7 @@ input[type="submit"]:active {
   min-width:200px ;
   min-height:30px ;
   font-size:1.5vw;
+  padding: 
 }
 .menu_value{
   position:absolute;
@@ -239,4 +258,5 @@ input[type="submit"]:active {
   min-width:150px ;
   min-height:30px ;
   font-size:1.5vw;
+  float: left;
 }
