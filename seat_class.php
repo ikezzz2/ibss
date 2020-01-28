@@ -93,6 +93,23 @@ private function generate_seat_check(){//座席情報確認画面生成
     $row = $stmt->fetchAll();
     return $row;
   }
+  private function check_res($POST,$key){
+    $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
+    $sql = "SELECT distinct COUNT(*) FROM ordermanagement WHERE seatnum = ? date = ? AND
+    ((finhour >= ?  AND finhour <= ?) OR
+    (starthour >= ? AND starthour <= ?))";
+    $date = substr($POST["reservation_info"]["date_info"],0,4)."-".substr($POST["reservation_info"]["date_info"],5,2)."-".substr($POST["reservation_info"]["date_info"],8,2);
+    $starttime = substr($POST["reservation_info"]["date_info"],0,4)."-".substr($POST["reservation_info"]["date_info"],5,2)."-".substr($POST["reservation_info"]["date_info"],8,2)." ".$POST["reservation_info"]["starttime"].":00";
+    $fintime = substr($POST["reservation_info"]["date_info"],0,4)."-".substr($POST["reservation_info"]["date_info"],5,2)."-".substr($POST["reservation_info"]["date_info"],8,2)." ".$POST["reservation_info"]["finishtime"].":00'";
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute(array($key,$date,$starttime,$fintime,$starttime,$fintime));
+    $row = $stmt->fetchAll();
+    return $row;
+  }
+
+
+
   public function check_seat($POST){//座席選択画面で特定の時間の予約を取ってくる
     $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
     $sql = "SELECT distinct seatnum FROM ordermanagement WHERE date = ? AND
@@ -111,6 +128,9 @@ private function generate_seat_check(){//座席情報確認画面生成
   public function insertreservation($POST){
     $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
     foreach ($POST["seatnum"] as $key) {
+    if($this->check_res($POST,$key) != NULL){
+        continue;
+      }
       $sql = "INSERT INTO ordermanagement (`seatnum`, `date`, `name`, `phonenum`, `numofpeople`, `starthour`, `finhour`, `couseid`) VALUES (?,?,?,?,?,?,?,?)";
         $dateinfo = $POST['reservation_info']['date_info'];
         $name = $POST['reservation_info']['name'];
