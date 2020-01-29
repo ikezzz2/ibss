@@ -96,7 +96,7 @@
             //$create_trtd .= '</td></tr><tr><td><input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required></td></tr>';
             for($j = 0; $j < 20; $j++){
               //$create_table .= $create_trtd;
-              $create_table .= '<tr style="padding:2vw 0vw;"><td><input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px;  float:left;" required>';
+              $create_table .= '<tr style="padding:2vw 0vw;"><td><input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.htmlentities($show_name[$j]).'" style="margin:10px 10px 10px 0px;  float:left;" required>';
               $create_table .= '</td><td><input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required></td></tr><tr><td style="padding: 0vw 0vw 3vw 0vw;">　</td><td></td></tr>';
               //echo '<input class="menu_name" type="text" name="addname[]" placeholder = "メニュー名を入力" value="'.$show_name[$j].'" style="margin:10px 10px 10px 0px;  float:left;" required>';
               //echo '<input class="menu_value" type="int" name="addvalue[]" placeholder = "金額を入力" value="'.$show_value[$j].'" style="margin:10px 10px 10px 0px; float:left;" required>';

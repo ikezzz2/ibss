@@ -61,6 +61,7 @@
                     $sc_back = $sc; 
                     $sc = $_GET["newcategory"];
                     if($sc == "") header("location: menu_add.php?A=".urlencode('新規カテゴリー名を入力してください'));
+                    if(strpos($sc,'<') || strpos($sc,'>') || strpos($sc,'"') || strpos($sc,"'"))  header("location: menu_add.php?A=".urlencode('不正な文字が利用されています')); 
                 }else{
                     header("location: menu_add.php?A=".urlencode('追加エラーです'));
                 }
@@ -81,19 +82,23 @@
                        }
                    }else if($addvalue[0][$i] <= 0 || strpos($addvalue[0][$i],'.') || strpos($addvalue[0][$i],'．')){
                         header("location: menu_add.php?A=".urlencode('金額は自然数を入力してください'));
-                   }
+                   }else if($addvalue[0][$i] > 10000) header("location: menu_add.php?A=".urlencode('金額は1万円以下で入力してください'));
+                    else if(mb_strlen($addname[0][$i]) > 15) header("location: menu_add.php?A=".urlencode('メニュー名は15文字以下で入力してください')); 
+
                    for($j = 0; $j < count($menu_name); $j++){
                         if($menu_name[$j] == $addname[0][$i]) header("location: menu_add.php?A=".urlencode('同じメニュー名が存在しています')); 
-                   }
-
+                        if(strpos($addname[0][$i],'<') || strpos($addname[0][$i],'>') || strpos($addname[0][$i],'"') || strpos($addname[0][$i],"'"))  header("location: menu_add.php?A=".urlencode('不正な文字が利用されています'));
+                    }
+                     
                     $addname_check[] = $addname[0][$i];
                     $addvalue_check[] = $addvalue[0][$i];
-                    echo '<input type="hidden" name="select_category" value="'.$select_category.'">';
-                    echo '<input type="hidden" name="addname_check[]" value="';
-                    echo $addname[0][$i];
-                    echo '">';
+                    $sql_taisaku = htmlentities($addname[0][$i]);
+                    echo '<input type="hidden" name="select_category" value="'.htmlentities($select_category).'">';
+                    echo '<input type="hidden" name="addname_check[]" value=';
+                    echo $sql_taisaku;
+                    echo "'>";
                     echo '<input type="hidden" name="addvalue_check[]" value="';
-                    echo $addvalue[0][$i];
+                    echo htmlentities($addvalue[0][$i]);
                     echo '">';
                     $check_add++;
                 }
@@ -108,7 +113,7 @@
     echo '<div class="menu_mei">メニュー名</div>';
     echo '<div class="menu_kin">金額</div>';
     echo "<br /><br />"; 
-    echo '<div class="cate">カテゴリ名：'.$sc."</div>";
+    echo '<div class="cate">カテゴリ名：'.htmlentities($sc)."</div>";
 
         /*echo "　　メニュー名　　　　　　金額<br /><br />";*/
         /*for($j = 0; $j < count($addname_check); $j++){
@@ -128,7 +133,7 @@
             $moji = "calc(55% - ".$max_moji."%)";
             $show_add .= '<table class="add_value" style="position: absolute; left: 68%">';//.$moji.'">';
             for($j = 0; $j < count($addname_check); $j++){
-                $show_add .= "<tr><td>".$addvalue_check[$j]."円</td></tr>";
+                $show_add .= "<tr><td>".htmlentities($addvalue_check[$j])."円</td></tr>";
             }
             $show_add .= "</td></tr></table>";
             echo $show_add;
@@ -145,14 +150,14 @@
     echo '<input type="hidden" name="back_category" value="'.$sc.'">';
     for($i = 0; $i < count($addname[0]); $i++){
         echo '<input type="hidden" name="backadd_name_check[]" value="';
-        echo $addname[0][$i];
+        echo htmlentities($addname[0][$i]);
         echo '">';
         echo '<input type="hidden" name="backadd_value_check[]" value="';
-        echo $addvalue[0][$i];
+        echo htmlentities($addvalue[0][$i]);
         echo '">';
     }
     if($sc_back != ""){
-        echo '<input type="hidden" name="back_newcategory" value="'.$sc_back.'">';
+        echo '<input type="hidden" name="back_newcategory" value="'.htmlentities($sc_back).'">';
     } 
     ?>
     <input type="submit" class="add_back" name="exe3" value="戻る" style="margin:10px 10px 10px 0px; float:left;" onClick="form.action='menu_add.php';return true">

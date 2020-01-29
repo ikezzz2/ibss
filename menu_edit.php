@@ -63,12 +63,14 @@
             //echo count($editcheck_menu);
 
             for($i = 0; $i < count($moto_date); $i++){
+                if(mb_strlen($editcheck_menu[$i]) > 15) header("location: menutop_edit.php?A=".urlencode('メニュー名は１５文字以内で入力してください'));
+                else if($editcheck_value[$i] > 10000) header("location: menutop_edit.php?A=".urlencode('金額は１万円で入力してください'));
                 //echo $moto_date[$i][1]."　".$moto_date[$i][0]."　".$editcheck_menu[$i]."　".$moto_date[$i][2]."　".$editcheck_value[$i]."<br />";
-                if($moto_date[$i][0] != $editcheck_menu[$i] || $moto_date[$i][2] != $editcheck_value[$i]){
+                if($moto_date[$i][0] != htmlentities($editcheck_menu[$i]) || $moto_date[$i][2] != $editcheck_value[$i]){
                     $edit_check = false; 
                 }
                 for($j = 0; $j < count($editcheck_menu); $j++){
-                    if($i != $j && $moto_date[$i][0] == $editcheck_menu[$j]) header("location: menutop_edit.php?A=".urlencode('同じメニュー名が存在しています'));
+                    if($i != $j && $moto_date[$i][0] == htmlentities($editcheck_menu[$j])) header("location: menutop_edit.php?A=".urlencode('同じメニュー名が存在しています'));
                 }
             }
             if($edit_check) header("location: menutop_edit.php?A=".urlencode('更新情報が入力されていません'));
@@ -151,8 +153,8 @@
             //echo '<div class="kaigyo"></div>';
             //echo "<table class='change1'><tr><td>変更前</td></tr><tr><td>変更後</td></tr></table>";
             //echo "<table class='date'><tr><td>".$moto_date[$i][0]."</td><td>".$moto_date[$i][2]."円</td></tr><tr><td>".$editcheck_menu[$i]."</td><td>".$editcheck_value[$i]."円</td></tr></table>";
-            $show_table .= '<tr><td style="width:15%;">変更前</td><td style="width:60%;">'.$moto_date[$i][0].'</td><td>'.$moto_date[$i][2].'円</td></tr>';
-            $show_table .= '<tr><td style="width:15%;">変更後</td><td style="width:60%;">'.$editcheck_menu[$i].'</td><td>'.$editcheck_value[$i].'円</td></tr><tr><td style="padding: 2vw 0vw"></td></tr>';
+            $show_table .= '<tr><td style="width:15%;">変更前</td><td style="width:60%;">'.htmlentities($moto_date[$i][0]).'</td><td>'.htmlentities($moto_date[$i][2]).'円</td></tr>';
+            $show_table .= '<tr><td style="width:15%;">変更後</td><td style="width:60%;">'.htmlentities($editcheck_menu[$i]).'</td><td>'.htmlentities($editcheck_value[$i]).'円</td></tr><tr><td style="padding: 2vw 0vw"></td></tr>';
             //echo "<table class='date_menu'><tr><td>".$moto_date[$i][0]."</td></tr><tr><td>".$editcheck_menu[$i]."</td></tr></table>";
             //if(strlen($editcheck_menu[$i]) <= strlen($moto_date[$i][0])) $moji = "calc(60% - ".strlen($moto_date[$i][0])."%)";
             //else $moji = "calc(60% - ".strlen($editcheck_menu[$i])."%)";
@@ -162,10 +164,10 @@
             $b_date = array($moto_date[$i][0],$moto_date[$i][1],$moto_date[$i][2]);
             
             $befor_date = implode(',', $b_date);
-            echo '<input type="hidden" name="befor_menu[]" value="'.$befor_date.'">';
-            echo '<input type="hidden" name="edit_menu[]" value="'.$editcheck_menu[$i].'">';
-            echo '<input type="hidden" name="edit_value[]" value="'.$editcheck_value[$i].'">';
-            echo '<input type="hidden" name="edit_category[]" value="'.$moto_date[$i][1].'">';
+            echo '<input type="hidden" name="befor_menu[]" value="'.htmlentities($befor_date).'">';
+            echo '<input type="hidden" name="edit_menu[]" value="'.htmlentities($editcheck_menu[$i]).'">';
+            echo '<input type="hidden" name="edit_value[]" value="'.htmlentities($editcheck_value[$i]).'">';
+            echo '<input type="hidden" name="edit_category[]" value="'.htmlentities($moto_date[$i][1]).'">';
         
             }
         }
@@ -182,7 +184,7 @@
     for($i = 0; $i < count($moto_date); $i++){
         $tb = array($editcheck_menu[$i],$moto_date[$i][1],$editcheck_value[$i]);
         $topback = implode(',', $tb);
-        echo '<input type="hidden" name="topback_date[]" value="'.$topback.'">';
+        echo '<input type="hidden" name="topback_date[]" value="'.htmlentities($topback).'">';
         $topback_date2[] = $topback;
     }
     //print_r($topback_date2);
