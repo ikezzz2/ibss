@@ -82,19 +82,26 @@ function draw_reservation(){
     var rect_hour = start_hour - hours   ;
     var rect_finish = finish_hour - start_hour;
     context3.fillStyle="silver";
-    leng = (rect_finish +  (finish_minute / 60));
+    leng = (rect_finish +  ((finish_minute - start_hour) / 60));
     limit = hours + 4;   
-         
-    if(leng + hours > limit){
-	  console.log(limit - hours);	
-     	leng =  limit - start_hour;
+      
+       if(finish_hour + (finish_minute/60)> limit){
+	if(start_hour <= hours - 1){
+	 leng = 5;
+	}else{
+	        leng =  limit - start_hour + 0.05;
+        leng -= (60 - finish_hour)/60;
 	}	
+	}
+      
 	
-    context3.fillRect(200*( 2 + rect_hour + (start_minute / 60)) - 150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * leng  - 5,50);
+	    
+
+    context3.fillRect(200*( 2 + rect_hour + (start_minute / 60))  - 150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * leng  ,50);
     context3.fillStyle="black";
-    context3.strokeRect(200*( 2 + rect_hour + (start_minute / 60))-150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * leng - 5,50);
+    context3.strokeRect(200*( 2 + rect_hour + (start_minute / 60))-150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * leng ,50);
     context3.font = "30px serif";
-    context3.fillText(<?php echo "'".$reservation["name"]."  ".$reservation["numofpeople"]."人'"; ?>  , 200*( 2 + rect_hour + (start_minute / 60)) + 10-150 , 40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
+    context3.fillText(<?php echo "'".$reservation["name"]."様  ".$reservation["numofpeople"]."人'"; ?>  , 200*( 2 + rect_hour + (start_minute / 60)) + 10-150 , 40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
     <?php }
   }
 

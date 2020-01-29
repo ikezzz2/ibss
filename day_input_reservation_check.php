@@ -88,7 +88,7 @@ function draw_reservation(){
     context3.fillStyle="black";
     context3.strokeRect(200*( 1 + rect_hour + (start_minute / 60))-150,40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)),200 * (rect_finish +  ((finish_minute-start_minute) / 60)) - 5,50);
     context3.font = "30px serif";
-    context3.fillText(<?php echo "'".$reservation["name"]."'"; ?>, 200*( 1 + rect_hour + (start_minute / 60)) + 10-150 , 40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
+    context3.fillText(<?php echo "'".$reservation["name"]."様 ".$reservation["numofpeople"]."人 '"; ?>, 200*( 1 + rect_hour + (start_minute / 60)) + 10-150 , 40 + (90*(<?php echo $seatlist[$j]["seatnum"] ?> - 1)) + 35);
 
     <?php }
   }
