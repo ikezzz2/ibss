@@ -179,7 +179,7 @@
         top: 8vw;
         left: 33%;*/
         top: 22vw;
-        left: 20%;
+        left: 10%;
     }
     div.menu_kin{
         position:absolute;/*
@@ -197,7 +197,7 @@
         font-size:4.5vw;
         top:13vw;/*
         left: 25%;*/
-        left:20%;
+        left:25%;
     }
     div.scroll {
     top: 30vw;
@@ -258,12 +258,12 @@ input[type="submit"]:active {
 .add1{
   /*margin:10px 10px 10px 0px;*/
   left:45%;
-  top: 80%;
+  top: 85%;
   margin-left:-2.5vw;
 }
 
 .add_back{
   /*margin:10px 10px 10px 0px;*/
   left:5%;
-  top: 80%;
+  top: 85%;
 }
