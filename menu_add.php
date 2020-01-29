@@ -176,9 +176,10 @@
     left: 28%;
     width: 60%;
     height: 40%;*/
-    left: 10%;
-    width: 80%;
-    height: 40%;
+    left: 5%;
+    width: 97%;/*
+    height: 40%;*/
+    height: 60%;
     overflow: scroll;
     overflow-x: hidden;
     }
@@ -196,7 +197,7 @@ table.add_value{
     float:left;
 }
 table.add_table td{
-    padding: 0vw 0vw 3vw 0vw;
+    padding: 0vw 0vw 5vw 0vw;
 }
 table.add_value td{
     padding: 1vw 0vw;
@@ -220,10 +221,12 @@ select{
 input[type="submit"]{
   /*position:fixed;*/
   /*background-color: #0066FF;
-  color: #ffffff;*/
-  width:10%;
-  height:7%;
-  font-size: 2vw;
+  color: #ffffff;*//*
+  width:10%;*/
+  width: 15%;
+  height:7%;/*
+  font-size: 2vw;*/
+  font-size: 4vw;
   /*border-radius: 20px;*/
 
 
@@ -245,7 +248,7 @@ input[type="submit"]:active {
   /*margin:10px 10px 10px 0px;*/
   left:45%;
   /*top: 85%;*/
-  top:55%;
+  top:80%;
   margin-left:-2.5vw;
 }
 
@@ -253,14 +256,15 @@ input[type="submit"]:active {
   position:absolute;
   /*margin:10px 10px 10px 0px;*/
   left:5%;
-  top: 55%;
+  top: 80%;
 }
 .menu_name{
   position:absolute;
   left: 0%;/*
   width:30%;*/
-  width:45%;
-  height:10%;
+  width:43%;/*
+  height:10%;*/
+  height: 8%;
   min-width:200px ;
   min-height:30px ;/*
   font-size:1.5vw;*/
@@ -271,8 +275,9 @@ input[type="submit"]:active {
   position:absolute;
   left: 50%;/*
   width:30%;*/
-  width:45%;
-  height:10%;
+  width:43%;/*
+  height:10%;*/
+  height: 8%;
   min-width:150px ;
   min-height:30px ;/*
   font-size:1.5vw;*/

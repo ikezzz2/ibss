@@ -86,38 +86,56 @@ if(isset($_GET["delete2"]) && isset($_GET["delete_menu"])){
         echo '<div class="menu_mei">メニュー名</div>';
         echo '<div class="menu_kin">金額</div>';
         echo "<br /><br />";
-        $max_cate = mb_strlen($d_menu[0]['category']);
+        /*$max_cate = mb_strlen($d_menu[0]['category']);
         for($i = 0; $i < count($d_menu); $i++){
             if($max_cate < mb_strlen($d_menu[$i]['category'])) $max_cate = mb_strlen($d_menu[$i]['category']);
         }
         $max_cate *= 2;
-        $cate = "calc(35% - ".$max_cate."%)";
+        $cate = "calc(35% - ".$max_cate."%)";*/
         echo '<div class="scroll">';
         
         $max_moji = strlen($d_menu[0]['productname']);
         
 
-        $catecheck = $d_menu[0]['category'];
-        $show_delete = '<table class="delete_menu"><tr><td>'.$catecheck."</td><td></td></tr>";
+        $catecheck = "";/*$d_menu[0]['category'];/*
+        //$show_delete = '<table class="delete_menu"><tr><td>'.$catecheck."</td><td></td></tr>";
+        $show_delete = '<table class="delete_menu"><tr><td></td></tr>';
         for($i = 0; $i < count($d_menu); $i++){
             if($catecheck != $d_menu[$i]['category']){
+                echo "カテゴリー名：".$d_menu[$i]['category'];
                 if($max_moji < strlen($d_menu[$i]['productname'])) $max_moji = strlen($d_menu[$i]['productname']);
-                $show_delete .= "<tr><td>".$d_menu[$i]['category']."</td><td>　</td></tr>";
+                //$show_delete .= "<tr><td>".$d_menu[$i]['category']."</td><td>　</td></tr>";
+                $show_delete .= "<tr><td></td></tr>";
                 $catecheck = $d_menu[$i]['category'];
             }
-            $show_delete .= "<tr><td></td><td>".$d_menu[$i]['productname']."</td></tr>";
+            //$show_delete .= "<tr><td></td><td>".$d_menu[$i]['productname']."</td></tr>";
+            $show_delete .= "<tr><td>".$d_menu[$i]['productname']."</td></tr>";
             $delete_menu[] = $d_menu[$i]['productname'];
         }
         $show_delete .= "</table>";
         $moji = "calc(55% - ".$max_moji."%)";
-        $show_delete .= "<table class='delete_value'" .'style="left: '.$moji.'"'."><tr><td>　</td></tr>";
+        $show_delete .= "<table class='delete_value'" .'style="left: 68%"'."><tr><td></td></tr>";
         $catecheck = $d_menu[0]['category'];
         for($j = 0; $j < count($d_menu); $j++){
             if($catecheck != $d_menu[$j]['category']){
-                $show_delete .= "<tr><td></td></tr><tr><td></td></tr>";
+                $show_delete .= "<tr><td></td></tr>";
                 $catecheck = $d_menu[$j]['category'];
             }
             $show_delete .= "<tr><td>".$d_menu[$j]['value']."円</td></tr>";
+        }*/
+        $show_delete = '<table class="delete_menu"><tr><td></td><td></td></tr>';
+        for($i = 0; $i < count($d_menu); $i++){
+            if($catecheck != $d_menu[$i]['category']){
+                
+                if($max_moji < strlen($d_menu[$i]['productname'])) $max_moji = strlen($d_menu[$i]['productname']);
+                //$show_delete .= "<tr><td>".$d_menu[$i]['category']."</td><td>　</td></tr>";
+                $show_delete .=  "<tr><td></td></tr><tr><td style='padding:2vw 0vw;'>カテゴリー名：".$d_menu[$i]['category']."</td></tr>";
+                $show_delete .= "<tr><td></td><td></td></tr>";
+                $catecheck = $d_menu[$i]['category'];
+            }
+            //$show_delete .= "<tr><td></td><td>".$d_menu[$i]['productname']."</td></tr>";
+            $show_delete .= "<tr><td>".$d_menu[$i]['productname'].'</td><td style="left: 68%;">'.$d_menu[$i]['value']."円</td></tr>";
+            $delete_menu[] = $d_menu[$i]['productname'];
         }
         $show_delete .= "</table>";
         echo $show_delete;
@@ -164,49 +182,54 @@ body{
         /*text-align: center;*/
         color: #000000;
         font-size: 2vw;
+        background:#eeeeee;
     }
     h1{
         text-align: center;
-        font-size:4vw;
+        font-size:6vw;
         color: #0066FF;
     }
     div.menu_mei{
         position:absolute;
-        font-size:2vw;
-        top: 8vw;
-        left: 33%;
+        font-size:4.5vw;
+        top: 13vw;
+        left: 10%;
     }
     div.menu_kin{
         position:absolute;
-        font-size:2vw;
-        top: 8vw;
-        left: 63%;
+        font-size:4.5vw;
+        top: 13vw;
+        left: 70%;
         float: left;
     }
     div.cate{
         position:absolute;
-        top: 12vw;
-        left: 25%;
+        font-size:4.5vw;
+        top: 13vw;
+        left: 20%;
     }
     div.scroll {
-    top: 12vw;
+    top: 22vw;
     font-size:2vw;
-    position:absolute;
-    left: <?php echo $cate; ?>;
-    width: 50%;
-    height: 40%;
+    position:absolute;/*
+    left: <?php //echo $cate; ?>;*/
+    left:3%;
+    width: 95%;
+    height: 60%;
     overflow: scroll;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     }
 
 table{
-    font-size: 1.5vw;
+    width:100%;
+    font-size: 4vw;
 }
 table.delete_menu{
     float:left;
 }
-table.delete_value{
-    position: relative;
+table.delete_value{/*
+    position: relative;*/
+    position:absolute;
     left: 30%;
     float:left;
 }
@@ -224,9 +247,9 @@ input[type="submit"]{
   position:absolute;
   /*background-color: #0066FF;
   color: #ffffff;*/
-  width:10%;
+  width:15%;
   height:7%;
-  font-size: 2vw;
+  font-size: 4vw;
   /*border-radius: 20px;*/
 
 
@@ -246,13 +269,13 @@ input[type="submit"]:active {
 .delete{
   /*margin:10px 10px 10px 0px;*/
   left:45%;
-  top: 85%;
+  top: 80%;
   margin-left:-2.5vw;
 }
 
 .menutop_back{
   /*margin:10px 10px 10px 0px;*/
   left:5%;
-  top: 90%;
+  top: 80%;
 }
 </style>

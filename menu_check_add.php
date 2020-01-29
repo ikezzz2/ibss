@@ -108,7 +108,7 @@
     echo '<div class="menu_mei">メニュー名</div>';
     echo '<div class="menu_kin">金額</div>';
     echo "<br /><br />"; 
-    echo '<div class="cate">'.$sc."</div>";
+    echo '<div class="cate">カテゴリ名：'.$sc."</div>";
 
         /*echo "　　メニュー名　　　　　　金額<br /><br />";*/
         /*for($j = 0; $j < count($addname_check); $j++){
@@ -126,7 +126,7 @@
             }
             $show_add .= "</td></tr></table>";
             $moji = "calc(55% - ".$max_moji."%)";
-            $show_add .= '<table class="add_value" style="position: relative; left: '.$moji.'">';
+            $show_add .= '<table class="add_value" style="position: absolute; left: 68%">';//.$moji.'">';
             for($j = 0; $j < count($addname_check); $j++){
                 $show_add .= "<tr><td>".$addvalue_check[$j]."円</td></tr>";
             }
@@ -165,43 +165,55 @@
         /*text-align: center;*/
         color: #000000;
         font-size: 2vw;
+        background:#eeeeee;
     }
     h1{
         text-align: center;
-        font-size:4vw;
+        font-size:8vw;
         color: #0066FF;
     }
     div.menu_mei{
-        position:absolute;
-        font-size:2vw;
+        position:absolute;/*
+        font-size:2vw;*/
+        font-size:4.5vw;/*
         top: 8vw;
-        left: 33%;
+        left: 33%;*/
+        top: 22vw;
+        left: 20%;
     }
     div.menu_kin{
-        position:absolute;
-        font-size:2vw;
+        position:absolute;/*
+        font-size:2vw;*/
+        font-size:4.5vw;/*
         top: 8vw;
-        left: 63%;
+        left: 63%;*/
+        top:22vw;
+        left:70%;
         float: left;
     }
     div.cate{
-        position:absolute;
-        top: 12vw;
-        left: 25%;
+        position:absolute;/*
+        top: 12vw;*/
+        font-size:4.5vw;
+        top:13vw;/*
+        left: 25%;*/
+        left:20%;
     }
     div.scroll {
-    top: 16vw;
+    top: 30vw;
     font-size:2vw;
-    position:absolute;
-    left: 33%;
-    width: 50%;
-    height: 40%;
+    position:absolute;/*
+    left: 33%;*/
+    left:3%;/*
+    width: 50%;*/
+    width: 95%;
+    height: 60%;
     overflow: scroll;
     overflow-x: hidden;
     }
 
 table{
-    font-size: 1.5vw;
+    font-size: 4vw;
 }
 table.add_menu{
     left: 0%;
@@ -211,10 +223,10 @@ table.add_value{
     float:left;
 }
 table.add_menu td{
-    padding: 1vw 0vw;
+    padding: 2vw 0vw;
 }
 table.add_value td{
-    padding: 1vw 0vw;
+    padding: 2vw 0vw;
 }
 
 
@@ -224,9 +236,9 @@ input[type="submit"]{
   position:absolute;
   /*background-color: #0066FF;
   color: #ffffff;*/
-  width:10%;
+  width:15%;
   height:7%;
-  font-size: 2vw;
+  font-size: 4vw;
   /*border-radius: 20px;*/
 
 
@@ -246,12 +258,12 @@ input[type="submit"]:active {
 .add1{
   /*margin:10px 10px 10px 0px;*/
   left:45%;
-  top: 85%;
+  top: 80%;
   margin-left:-2.5vw;
 }
 
 .add_back{
   /*margin:10px 10px 10px 0px;*/
   left:5%;
-  top: 90%;
+  top: 80%;
 }
