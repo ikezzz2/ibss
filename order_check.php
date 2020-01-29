@@ -33,13 +33,15 @@
 
             for($i = 1; $i < $count -1; $i++){
                 if($menu_name[$i] != "TAB" && $_POST[$menu_name[$i]][0] != 0){
+                    echo "<dvi class ='pay_check_size'>";
                     print_r($menu_name[$i]);
-                    echo ("    × ");
+                    echo (" × ");
                     print_r($_POST[$menu_name[$i]][0]);
                     echo "<br>";
                     echo "<input type='hidden' name=name[] value=".$menu_name[$i].">";
                     echo "<input type='hidden' name=sum[] value=".$_POST[$menu_name[$i]][0].">";
                     $menu_count1++;
+                    echo "<dvi>";
 
                 }else{
                     if($_POST[$menu_name[$i]][0] == NULL){
