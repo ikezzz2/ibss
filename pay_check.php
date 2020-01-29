@@ -33,13 +33,20 @@
     <?php
         $row=$seat->pic_order($_GET["A"]);
         //print_r ($row);
-        foreach ($row as $num){
-            //print("　　　 ");
-            echo $num[0];
-            print(" × ");
-            echo $num[1];
+        if($row==NULL){
+            print("会計を行うための商品がありません");
             echo "<br>";
+            print("完了ボタンを押すと予約情報が削除されます");
+        }else{
+            foreach ($row as $num){
+                //print("　　　 ");
+                echo $num[0];
+                print(" × ");
+                echo $num[1];
+                echo "<br>";
+            }
         }
+
     ?>
     </div>
 
@@ -51,8 +58,11 @@
     <?php
         $row=$seat->sum_pay($_GET["A"]);
                 print("合計金額 ￥");
-                echo $row[0][0];
-        
+                if($row[0][0]==NULL){
+                    echo 0;
+                }else{
+                    echo $row[0][0];
+                }
                 echo "<input type='hidden' name='seat_num' value=".$_GET["A"].">";
 
         // $time=$seat->get_info($_GET["A"]);
