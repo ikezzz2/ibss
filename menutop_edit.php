@@ -126,7 +126,8 @@
                     $checkbox = '<input type="checkbox" name="checkslist[]" value="';
                     $checkbox .= "{$show[$j][0]}";
                     $checkbox .= '">';
-                    $checkbox .= "{$c}　";
+                    if($c < 10) $checkbox .= "0{$c}　";
+                    else $checkbox .= "{$c}　";
                     if($show[$j][0] == $menu_date[$j][0]) $checkbox .= '<input type="text" class="A" id="check'.$j.'" name="editmenu[]" value="'.$show[$j][0].'" style="margin:0px 0px 0px 10px; background-color: #ffffff;" onchange="name_color_change();" required>';
                     else $checkbox .= '<input type="text" class="A" id="check'.$j.'" name="editmenu[]" value="'.$show[$j][0].'" style="margin:0px 0px 0px 10px; background-color: #d9f6ff;" onchange="name_color_change();" required>';
 
