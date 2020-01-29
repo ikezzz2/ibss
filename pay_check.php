@@ -57,10 +57,8 @@
     <span class="se1" style="border-bottom: solid 1px red;">
     <?php
         $row=$seat->sum_pay($_GET["A"]);
-                print("合計金額 ￥");
-                if($row[0][0]==NULL){
-                    echo 0;
-                }else{
+                if($row[0][0]!=NULL){
+                    print("合計金額 ￥");
                     echo $row[0][0];
                 }
                 echo "<input type='hidden' name='seat_num' value=".$_GET["A"].">";
