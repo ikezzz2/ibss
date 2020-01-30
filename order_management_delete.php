@@ -27,7 +27,7 @@
       <body>
         <h2>削除内容確認</h2>
 
-        <!-- 商品にチェックが入っているかの確認-->
+        <!-- 商品にチェックが入っているかの確認 -->
         <?php
         if(!isset($_POST["product"])){ // チェックが入っていないとき
           echo "注文が指定されていません。";
@@ -42,7 +42,7 @@
         ?>
           <form method = "post">
             <!-- 注文管理画面から送信された情報を保持するための設定 -->
-            <!-- 削除ボタンが押されたこと、 -->
+            <!-- [削除ボタンが押されたこと]、[チェックが入った商品の注文ID]の2種類の情報 -->
             <input type = "hidden" name = "button_delete" value = <?php echo $_POST["button_delete"] ?>>
             <?php
               foreach ($_POST["product"] as $order_id) {
