@@ -1,8 +1,8 @@
 <?php
   // ログインしているかを確認
-  //include "login_class.php";
-  //$login = new login_class();
-  //$login->ses_start();
+  include "login_class.php";
+  $login = new login_class();
+  $login->ses_start();
 
   // 注文管理を行うための準備
   include "order_management_class.php"; // 注文管理をするための処理を記述したクラスファイル
@@ -24,10 +24,11 @@
     <form method = "post" action="">
       <?php
         // 更新ボタンの処理
-        if(isset($_POST["button_update"]) and isset($_POST["product"])){
+        if(isset($_POST["button_update"]) and isset($_POST["product"])){ // 更新ボタンが押され、商品にチェックがあるか確認
           $kbn = htmlspecialchars($_POST["button_update"], ENT_QUOTES, "utf-8");
           switch($kbn){
             case "update":
+              // 配膳フラグの更新を行う
               $order_management->order_management_update($_POST["product"]);
               break;
 
@@ -44,26 +45,26 @@
       <!-- ボタンの設定 -->
       <br>
       <!-- TOPへ戻るボタン(top画面へ遷移する) -->
-			<button class="btn" type = "button" name = "button_return" value = "return" onclick = "location.href='toppage.php'">
-				TOPへ戻る
-			</button>
+      <button class = "btn" type = "button" name = "button_return" value = "return" onclick = "location.href='toppage.php'">
+        TOPへ戻る
+      </button>
 
-			<!-- 更新ボタン(配膳フラグの更新する) -->
-			<button class="btn" type = "submit" name = "button_update" value = "update">
-				更新
-			</button>
+      <!-- 更新ボタン(配膳フラグの更新する) -->
+      <button class = "btn" type = "submit" name = "button_update" value = "update">
+        更新
+      </button>
 
       <br>
 
-			<!-- リセットボタン(チェックを全てはずす) -->
-			<button class="btn" type = "reset" name = "button_reset" value = "reset">
-				リセット
-			</button>
+      <!-- リセットボタン(チェックを全てはずす) -->
+      <button class = "btn" type = "reset" name = "button_reset" value = "reset">
+        リセット
+      </button>
 
       <!-- 削除ボタン(遷移先で、商品の削除確認を行う) -->
-			<button class="btn" type = "submit" name = "button_delete" value = "delete" formaction = "order_management_delete.php">
-				削除
-			</button>
+      <button class = "btn" type = "submit" name = "button_delete" value = "delete" formaction = "order_management_delete.php">
+        削除
+      </button>
     </form>
   </body>
 

@@ -9,6 +9,7 @@
     private function order_management(){
       $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
+      // 注文管理テーブルから、注文ID、商品名、座席番号、配膳フラグを取得
       $sql = "select orderid, productname, seatnum, servingflag from orderaccept";
       $stmt = $pdo->prepare($sql);
       $stmt->execute(null);
@@ -41,10 +42,10 @@
     public function order_management_update($served_order){
       $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
-      foreach($served_order as $row){
+      foreach($served_order as $row){ // 配膳フラグを1に更新
         $sql_update = "update orderaccept set servingflag = 1 where orderid = ?";
-  			$stmt_update = $pdo -> prepare($sql_update);
-  			$stmt_update -> execute(Array($row));
+        $stmt_update = $pdo -> prepare($sql_update);
+        $stmt_update -> execute(Array($row));
       }
     }
 
@@ -52,10 +53,10 @@
     public function order_management_delete($delete_order){
       $pdo = new PDO($this->dnsinfo, $this->db_user, $this->db_pw);
 
-      foreach($delete_order as $row){
+      foreach($delete_order as $row){ // 未配膳の商品を削除する
         $sql_delete = "delete from orderaccept where orderid = ? and servingflag = 0";
-  			$stmt_delete = $pdo -> prepare($sql_delete);
-  			$stmt_delete -> execute(Array($row));
+        $stmt_delete = $pdo -> prepare($sql_delete);
+        $stmt_delete -> execute(Array($row));
       }
     }
 
@@ -73,12 +74,12 @@
 
       foreach($delete_order as $delete_order_id){ // 注文IDに対応する商品名、座席番号の取得
         $sql_check = "select productname, seatnum from orderaccept where orderid = ?";
-  			$stmt_check = $pdo -> prepare($sql_check);
-  			$stmt_check->execute(Array($delete_order_id));
+        $stmt_check = $pdo -> prepare($sql_check);
+        $stmt_check->execute(Array($delete_order_id));
 
         $row = $stmt_check->fetchAll();
         $this->order_management_html .= "<tr>";
-        $this->order_management_html .= "<td>".$row[0]['productname']."</td>"; // why not? $stmt_check['productname']
+        $this->order_management_html .= "<td>".$row[0]['productname']."</td>";
         $this->order_management_html .= "<td>".$row[0]['seatnum']."</td>";
         $this->order_management_html .= "</tr>";
       }

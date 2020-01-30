@@ -27,7 +27,7 @@
       <body>
         <h2>削除内容確認</h2>
 
-        <!-- チェックが入っているかの確認-->
+        <!-- 商品にチェックが入っているかの確認-->
         <?php
         if(!isset($_POST["product"])){ // チェックが入っていないとき
           echo "注文が指定されていません。";
@@ -41,18 +41,19 @@
         }else{ // チェックが入っているとき
         ?>
           <form method = "post">
-            <!-- 注文管理画面から送信された値を保持するための設定 -->
+            <!-- 注文管理画面から送信された情報を保持するための設定 -->
+            <!-- 削除ボタンが押されたこと、 -->
             <input type = "hidden" name = "button_delete" value = <?php echo $_POST["button_delete"] ?>>
             <?php
-              foreach ($_POST["product"] as $key) {
+              foreach ($_POST["product"] as $order_id) {
                 ?>
-                <input type = "hidden" name = "product[]" value = <?php echo $key ?>>
+                <input type = "hidden" name = "product[]" value = <?php echo $order_id ?>>
                 <?php
               }
             ?>
             <?php
             // 削除ボタンの処理
-            if(isset($_POST["button_delete_check"]) and isset($_POST["product"])){
+            if(isset($_POST["button_delete_check"]) and isset($_POST["product"])){ // 削除ボタンが押され、チェックが入った商品があるか確認
               $kbn = htmlspecialchars($_POST["button_delete_check"], ENT_QUOTES, "utf-8");
               switch($kbn){
                 case "delete_check":
@@ -73,12 +74,12 @@
 
             <!-- ボタンの作成 -->
             <!-- 戻るボタン(注文管理画面へ遷移する) -->
-  			    <button class="btn" type = "button" name = "button_delete_return" value = "delete_return" onclick = "location.href='order_management.php'">
+            <button class = "btn" type = "button" name = "button_delete_return" value = "delete_return" onclick = "location.href='order_management.php'">
               戻る
-  			    </button>
+            </button>
 
             <!-- 削除ボタン -->
-            <button class="btn" type = "submit" name = "button_delete_check" value = "delete_check">
+            <button class = "btn" type = "submit" name = "button_delete_check" value = "delete_check">
               削除
             </button>
 
